@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:textSize="14sp"
+    android:padding="7dp"
+    android:textColor="#555555"
+
+    android:background="@drawable/border"
+/>
+
+<!--
+    /media/alejandro/METAL SANDISK/IES CLARA/Moviles/AndroidProjects/AndroidStudio/Cuaderno/P003_IndianSpinner/app/src/main/res/drawable/border.xml
+-->

@@ -1,6 +1,7 @@
 package com.example.e003_recycledviewanimales;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import java.util.List;
 
 public class Adapter extends RecyclerView.Adapter <Adapter.ViewHolder>{
 
+    private int posicionSeleccionada = RecyclerView.NO_POSITION;
     List<String> misdatos;
     LayoutInflater miInflador;
     // desde el activity main le diremos al adapter que ese es su contexto
@@ -41,8 +43,42 @@ public class Adapter extends RecyclerView.Adapter <Adapter.ViewHolder>{
     // Recupera la posicion del array en el que estamos y asigna en TextView el nombre del animal
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        String animal = misdatos.get(position);
-        holder.myTextView.setText(animal);
+        String animales = misdatos.get(position);
+        holder.myTextView.setText(animales);
+
+        if(posicionSeleccionada == position){
+            holder.myTextView.setBackgroundColor(Color.RED);
+            holder.myTextView.setTextColor(Color.WHITE);
+        }
+        else{
+            holder.myTextView.setBackgroundColor(Color.WHITE);
+            holder.myTextView.setTextColor(Color.BLACK);
+        }
+
+
+        // pequeno pulso
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                notifyItemChanged(posicionSeleccionada);
+                posicionSeleccionada=position;
+                notifyItemChanged(posicionSeleccionada);
+
+                // holder.myTextView.setBackgroundColor(Color.RED);
+                // holder.myTextView.setTextColor(Color.WHITE);
+            }
+        });
+
+        // manteniendo pulsado
+        holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                holder.myTextView.setBackgroundColor(Color.WHITE);
+                holder.myTextView.setTextColor(Color.BLACK);
+
+                return true;
+            }
+        });
     }
 
     // total numero de filas

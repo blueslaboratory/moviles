@@ -1,0 +1,59 @@
+<resources>
+    <string name="app_name">Indian Spinner</string>
+    <string name="welcome_text">Creating Multiple Spinners (Populating the 2nd Spinner Based on the Selection of the 1st Spinner)</string>
+    <string name="state">State*</string>
+    <string name="district">District*</string>
+    <string name="submit">Submit</string>
+
+    <!--
+    <string-array name="array_cultura">
+        <item>Elemento cultural</item>
+        <item>Serie</item>
+        <item>Grupo de musica</item>
+        <item>Anime</item>
+    </string-array>
+    -->
+
+    <!-- Indian States -->
+    <string-array name="array_indian_states">
+        <item>Select Your State</item>
+        <item>Bihar</item>
+        <item>Chandigarh</item>
+        <item>Delhi</item>
+        <item>Goa</item>
+    </string-array>
+
+    <!-- Indian Districts -->
+    <string-array name="array_default_districts">
+        <item>Select Your District</item>
+    </string-array>
+
+    <string-array name="array_bihar_districts">
+        <item>Select Your District</item>
+        <item>Araria</item>
+        <item>Banka</item>
+        <item>Darbhanga</item>
+    </string-array>
+
+    <string-array name="array_chandigarh_districts">
+        <item>Select Your District</item>
+        <item>Chandigarh</item>
+    </string-array>
+
+    <string-array name="array_delhi_districts">
+        <item>Select Your District</item>
+        <item>New Delhi</item>
+        <item>Central Delhi</item>
+        <item>North Delhi</item>
+        <item>East Delhi</item>
+        <item>West Delhi</item>
+        <item>South Delhi</item>
+    </string-array>
+
+    <string-array name="array_goa_districts">
+        <item>Select Your District</item>
+        <item>North Goa</item>
+        <item>South Goa</item>
+    </string-array>
+
+</resources>

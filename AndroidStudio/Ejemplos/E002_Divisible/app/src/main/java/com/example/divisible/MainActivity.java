@@ -1,7 +1,6 @@
 package com.example.divisible;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -9,18 +8,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageView;
-import android.widget.RadioButton;
-import android.widget.Switch;
 import android.widget.TextView;
 
-// este proyecto no se construyo bien: pantalla gris (rehacerlo de 0)
 
 public class MainActivity extends AppCompatActivity {
 
     Button mybtnAleatorio, mybtnComprobar, mybtnExit;
     TextView mytvAleatorio, mytvComprobar;
     CheckBox mycb2, mycb3, mycb5, mycb10, mycbNo;
-    ImageView myImageView;
+    ImageView myImageView1, myImageView2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +36,10 @@ public class MainActivity extends AppCompatActivity {
         mycb10 = (CheckBox) findViewById(R.id.cb10);
         mycbNo = (CheckBox) findViewById(R.id.cbNo);
 
-        myImageView = findViewById(R.id.iv);
+        myImageView1 = findViewById(R.id.iv1);
+        myImageView2 = findViewById(R.id.iv2);
+
+        verificar();
 
     }
 
@@ -71,75 +70,86 @@ public class MainActivity extends AppCompatActivity {
 
                     if(flag){
 
-                        //2
+                        // 2 (si no es divisible, es falso)
+                        // si esta checkeado y si divisible por 2 te has equivocado
+                        // hay que comprobar los falsos
                         if(mycb2.isChecked()){
                             if(random%2!=0){
                                 flag=false;
                             }
                         }
-                        //no checkeado
+                        // no checkeado y sí divisible por 2 te has equivocado
                         else{
                             if(random%2==0){
                                 flag=false;
                             }
                         }
 
-                        //3
+                        // 3
                         if(mycb3.isChecked()){
                             if(random%3!=0){
                                 flag=false;
                             }
                         }
-                        //no checkeado
+                        // no checkeado
                         else{
                             if(random%3==0){
                                 flag=false;
                             }
                         }
 
-                        //5
+                        // 5
                         if(mycb5.isChecked()){
                             if(random%5!=0){
                                 flag=false;
                             }
                         }
-                        //no checkeado
+                        // no checkeado
                         else{
                             if(random%5==0){
                                 flag=false;
                             }
                         }
 
-                        //10
+                        // 10
                         if(mycb10.isChecked()){
                             if(random%10!=0){
                                 flag=false;
                             }
                         }
-                        //no checkeado
+                        // no checkeado
                         else{
                             if(random%10==0){
                                 flag=false;
                             }
                         }
 
+                        //ninguno
+                        if(mycbNo.isChecked() & !flag){
+
+                        }
+
                         // No es divisible entre ninguno: flag = true
                         // si flag es true, de momento podemos entrar
                         // el resto de checkboxes no debe estar marcado porque si no es falso por defecto
                         if(flag){
-                            if((mycb2.isChecked() || mycb3.isChecked() ||
-                               mycb5.isChecked() || mycb10.isChecked())
-                               && mycbNo.isChecked()) {
 
-                               flag = false;
+                            mytvComprobar.setText("CORRECTO");
+                            mytvComprobar.setBackgroundColor(Color.GREEN);
+                            mytvComprobar.setTextColor(Color.WHITE);
+                            flag = false;
 
-                            }
+                        }
+                        else{
+                            mytvComprobar.setText("INCORRECTO");
+                            mytvComprobar.setBackgroundColor(Color.RED);
+                            mytvComprobar.setTextColor(Color.WHITE);
                         }
                     }
 
                 }
                 else{
-                    mytvComprobar.setText("genera un aleatorio");
+                    mytvComprobar.setText("GENERA UN ALEATORIO");
                 }
             }
         });

@@ -6,20 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/tvDivisible"
-        android:layout_width="291dp"
-        android:layout_height="62dp"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="176dp"
-        android:text="Seleccione los numeros entre los que es divisible el aleatorio:"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <LinearLayout
-        android:layout_width="288dp"
-        android:layout_height="55dp"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
         android:layout_marginStart="64dp"
         android:layout_marginTop="76dp"
         android:baselineAligned="true"
@@ -40,24 +29,26 @@
             android:id="@+id/tvAleatorio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:textAlignment="center"
+            android:textSize="22sp" />
     </LinearLayout>
 
     <Button
         android:id="@+id/btnComprobar"
-        android:layout_width="284dp"
-        android:layout_height="43dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="540dp"
+        android:layout_width="300dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="524dp"
         android:text="COMPROBAR "
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
-        android:layout_width="292dp"
+        android:layout_width="300dp"
         android:layout_height="245dp"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="268dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="252dp"
         android:orientation="vertical"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -94,26 +85,50 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="291dp"
+        android:layout_width="300dp"
         android:layout_height="73dp"
-        android:layout_marginTop="613dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="572dp"
         android:orientation="horizontal"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="64dp">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/iv1"
+            android:layout_width="76dp"
+            android:layout_height="match_parent"
+            android:visibility="visible"
+            app:srcCompat="@drawable/clouds"
+            tools:srcCompat="@drawable/clouds" />
 
         <TextView
             android:id="@+id/tvComprobar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center_horizontal|center_vertical"
+            android:textAlignment="center"
+            android:textSize="18sp" />
 
         <ImageView
-            android:id="@+id/iv"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            tools:srcCompat="@tools:sample/avatars" />
+            android:id="@+id/iv2"
+            android:layout_width="76dp"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/clouds" />
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvDivisible"
+        android:layout_width="300dp"
+        android:layout_height="62dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="160dp"
+        android:text="Seleccione los numeros entre los que es divisible el aleatorio:"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnExit"

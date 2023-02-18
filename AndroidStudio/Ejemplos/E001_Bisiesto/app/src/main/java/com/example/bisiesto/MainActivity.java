@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
-import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -43,18 +42,16 @@ public class MainActivity extends AppCompatActivity {
         // verificar si es bisiesto o no
         verificar();
 
-
-
     }
 
     // switch
     // para pillarlo en el onClick hay que pasarle View v a la funcion
     public void fondoAmarillo(View v){
         myswitchFondo.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if(myswitchFondo.isChecked()){
-
                     mycl.setBackgroundColor(Color.parseColor("#f1f885"));
                 }
                 else{
