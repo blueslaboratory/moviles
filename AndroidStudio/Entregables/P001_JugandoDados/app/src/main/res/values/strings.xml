@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">dados</string>
+
+    <!-- array par/impar -->
+    <string-array name="array_par_impar">
+        <item>Par</item>
+        <item>Impar</item>
+    </string-array>
+
+    <!-- array mayor/menor -->
+    <string-array name="array_mayor_menor">
+        <item>Mayor que 7</item>
+        <item>Menor que 7</item>
+    </string-array>
+</resources>
