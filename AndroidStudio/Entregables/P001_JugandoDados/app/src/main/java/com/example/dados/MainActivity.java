@@ -3,6 +3,7 @@ package com.example.dados;
 import androidx.appcompat.app.AppCompatActivity;
 
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -13,6 +14,8 @@ import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.bumptech.glide.Glide;
 
 
 // Duda: Cuando se pasa el View v a un metodo?
@@ -28,6 +31,9 @@ public class MainActivity extends AppCompatActivity {
     ImageView myivDado1, myivDado2;
     TextView mytvDado1, mytvDado2;
 
+    int errorComprobacion = 0;
+    String stringResultado = "";
+    String urlImagenDados = "http://clipart-library.com/images/qcBX8Xp8i.gif";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,8 +53,15 @@ public class MainActivity extends AppCompatActivity {
 
         mybtnLanzar = (Button) findViewById(R.id.btnLanzar);
 
+        // dados estaticos
         myivDado1 = (ImageView) findViewById(R.id.ivDado1);
         myivDado2 = (ImageView) findViewById(R.id.ivDado2);
+
+        // dados dinamicos (gifs)
+        // Cargar un gif animado en ANDROID usando Glide
+        Uri urlparse = Uri.parse(urlImagenDados);
+        Glide.with(getApplicationContext()).load(urlparse).into(myivDado1);
+        Glide.with(getApplicationContext()).load(urlparse).into(myivDado2);
 
         mytvDado1 = (TextView) findViewById(R.id.tvDado1);
         mytvDado2 = (TextView) findViewById(R.id.tvDado2);
@@ -111,6 +124,7 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
         else{
+            errorComprobacion = 1;
             return false;
         }
     }
@@ -118,6 +132,7 @@ public class MainActivity extends AppCompatActivity {
     // 2. Opcion Par/Impar, Mayor/Menor que 7 seleccionado
     public boolean comprobarRadioSeleccionado(View v){
         if(!myradioBtnParImpar.isChecked() && !myradioBtnMayorMenor.isChecked()) {
+            errorComprobacion = 2;
             return false;
         }
         else{
@@ -147,10 +162,12 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
             else{
+                errorComprobacion = 4;
                 return false;
             }
 
         } catch (Exception e){
+            errorComprobacion = 4;
             return false;
         }
     }
@@ -164,6 +181,7 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
         else{
+            errorComprobacion = 5;
             return false;
         }
     }
@@ -196,9 +214,37 @@ public class MainActivity extends AppCompatActivity {
 
                 }
                 else{
-                    Toast.makeText(MainActivity.this,
-                              "\nError al lanzar los dados",
-                                   Toast.LENGTH_LONG).show();
+
+                    switch(errorComprobacion){
+                        case 1:
+                            Toast.makeText(MainActivity.this,
+                                    "\nError: saldo < 0",
+                                    Toast.LENGTH_LONG).show();
+                            break;
+                        case 2:
+                            Toast.makeText(MainActivity.this,
+                                    "\nError: seleccione una opcion",
+                                    Toast.LENGTH_LONG).show();
+                            break;
+                        case 3:
+                            break;
+                        case 4:
+                            Toast.makeText(MainActivity.this,
+                                    "\nError: apuesta no valida",
+                                    Toast.LENGTH_LONG).show();
+                            break;
+                        case 5:
+                            Toast.makeText(MainActivity.this,
+                                    "\nError: la apuesta supera el saldo",
+                                    Toast.LENGTH_LONG).show();
+                            break;
+                        default:
+                            Toast.makeText(MainActivity.this,
+                                    "\nError al lanzar los dados",
+                                    Toast.LENGTH_LONG).show();
+                            break;
+                    }
+
                 }
             }
         });
@@ -214,6 +260,7 @@ public class MainActivity extends AppCompatActivity {
         int vDado2 = Integer.parseInt(mytvDado2.getText().toString());
 
         int resultado = vDado1+vDado2;
+        stringResultado = "Resultado: " +resultado;
 
         String opcion = myspinnerOpcion.getSelectedItem().toString();
 
@@ -256,9 +303,15 @@ public class MainActivity extends AppCompatActivity {
 
         if(gana){
             saldo = saldo + apuesta;
+            Toast.makeText(MainActivity.this,
+                    "\n"+stringResultado +"\n¡Has ganado!",
+                    Toast.LENGTH_LONG).show();
         }
         else{
             saldo = saldo - apuesta;
+            Toast.makeText(MainActivity.this,
+                    "\n"+stringResultado +"\n¡Has perdido!",
+                    Toast.LENGTH_LONG).show();
         }
 
         mytvSaldoNum.setText(String.valueOf(saldo));

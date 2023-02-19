@@ -23,7 +23,7 @@
             android:layout_weight="1"
             android:height="50dp"
             android:gravity="center_horizontal|center_vertical"
-            android:text="Saldo:"
+            android:text="Saldo (€):"
             android:textAlignment="center"
             android:textSize="20sp" />
 
@@ -119,8 +119,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="112dp"
         android:layout_marginTop="628dp"
-        android:gravity="center"
+        android:gravity="center|center_horizontal|center_vertical"
         android:text="¡Lánzalo!"
+        android:textAlignment="center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -130,8 +131,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="238dp"
         android:layout_marginTop="628dp"
-        android:gravity="center"
+        android:gravity="center|center_horizontal|center_vertical"
         android:text="¡Lánzalo!"
+        android:textAlignment="center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
