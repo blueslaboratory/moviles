@@ -1,10 +1,15 @@
 package com.example.dados;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 
+import android.content.DialogInterface;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -30,6 +35,11 @@ public class MainActivity extends AppCompatActivity {
     Button mybtnLanzar;
     ImageView myivDado1, myivDado2;
     TextView mytvDado1, mytvDado2;
+
+    ImageView myivXML_loader;
+
+    // Handler, como crear un hilo
+    Handler handler = new Handler();
 
     int errorComprobacion = 0;
     String stringResultado = "";
@@ -62,6 +72,9 @@ public class MainActivity extends AppCompatActivity {
         Uri urlparse = Uri.parse(urlImagenDados);
         Glide.with(getApplicationContext()).load(urlparse).into(myivDado1);
         Glide.with(getApplicationContext()).load(urlparse).into(myivDado2);
+
+        // dados dinamicos AlertView
+        myivXML_loader = (ImageView) findViewById(R.id.ivXML_loader);
 
         mytvDado1 = (TextView) findViewById(R.id.tvDado1);
         mytvDado2 = (TextView) findViewById(R.id.tvDado2);
@@ -96,7 +109,6 @@ public class MainActivity extends AppCompatActivity {
 
 
         lanzarDados();
-
 
 
     }
@@ -209,8 +221,29 @@ public class MainActivity extends AppCompatActivity {
                    comprobarApuesta(v) &&
                    saldoMayorqueApuesta(v)){
 
+
+                    // Intento 1:
+                    gifDados(v);
+
+                    // Intento 2: pasarle la imagen, si no no va (no va)
+                    // gifDados(myivXML_loader);
+
                     randomDados(v);
-                    actualizarSaldo(gana());
+
+
+                    // haciendo que el boton no sea clickable hasta que hayan pasado 4000ms
+                    mybtnLanzar.setEnabled(false);
+
+
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            actualizarSaldo(gana());
+                            seguirJugando();
+                            mybtnLanzar.setEnabled(true);
+                        }
+                    }, 4000);
+
 
                 }
                 else{
@@ -251,6 +284,38 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+
+    // Lanzar los dados con un gif (intento 1: fallido - imagen estatica)
+    public void gifDados(View v){
+        int duracion = Toast.LENGTH_LONG;
+        Toast toastdados = new Toast(MainActivity.this);
+        toastdados.setDuration(duracion);
+        LayoutInflater myInflator = getLayoutInflater();
+        View myLayout = myInflator.inflate(R.layout.daditos_layout, null);
+        toastdados.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
+        toastdados.setView(myLayout);
+        toastdados.show();
+    }
+
+
+
+    // Lanzar los dados con un gif (intento 2: fallido por completo (A Tony y Mirel les funciona))
+    /*
+    public void gifDados(View v){
+        LayoutInflater myInflter = getLayoutInflater();
+        View gif = myInflter.inflate(R.layout.daditos_layout, null);
+        Toast myToastDados = new Toast(getApplicationContext());
+        Glide.with(MainActivity.this).load(R.drawable.daditos).into((ImageView) gif.findViewById(R.id.iv_gifdados));
+
+        myToastDados.setGravity(Gravity.CENTER_VERTICAL, 0,0);
+        myToastDados.setDuration(Toast.LENGTH_LONG);
+        myToastDados.setView(gif);
+        myToastDados.show();
+
+    }
+    */
+
 
 
     public boolean gana(){
@@ -317,4 +382,19 @@ public class MainActivity extends AppCompatActivity {
         mytvSaldoNum.setText(String.valueOf(saldo));
     }
 
+    public void seguirJugando(){
+        AlertDialog.Builder MyAlert = new AlertDialog.Builder(MainActivity.this);
+        MyAlert.setTitle("DICE ROLL");
+        MyAlert.setMessage("¿Quieres tirar los dados?");
+        MyAlert.setPositiveButton("SI", null);
+        MyAlert.setNegativeButton("SALIR DEL JUEGO", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                finish();
+            }
+        });
+        AlertDialog dialog = MyAlert.create();
+        dialog.show();
+
+    }
 }
