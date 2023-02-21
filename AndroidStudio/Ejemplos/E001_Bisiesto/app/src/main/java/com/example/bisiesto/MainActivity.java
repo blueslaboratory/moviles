@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
     // switch
     // para pillarlo en el onClick hay que pasarle View v a la funcion
+    // hay que especificar la funcion en el onClick del switch
     public void fondoAmarillo(View v){
         myswitchFondo.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 
@@ -73,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
 
     // https://developer.android.com/guide/topics/ui/controls/radiobutton?hl=es-419#java
     // https://www.develou.com/radiobutton-android/
-    // verificar si es aleatorio o no
+    // verificar si es bisiesto o no sin necesidad de poner la funcion en el onClick del boton
     public void verificar(){
 
         mybtnVerificar.setOnClickListener(new View.OnClickListener() {

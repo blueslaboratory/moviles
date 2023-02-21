@@ -46,8 +46,11 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
+
+        //sumarSinOnClick();
     }
 
+    // En activity_main.xml meter la funcion sumar en el onClick
     public void sumar(View v){
         Double numero1, numero2, numero3;
         String numero;
@@ -61,6 +64,32 @@ public class MainActivity extends AppCompatActivity {
         numero3 = numero1 + numero2;
         mytv3.setText(String.valueOf(numero3));
     }
+
+
+
+    /*
+
+    // En activity_main.xml no hace falta meter la funcion sumar en el onClick
+    public void sumarSinOnClick(){
+        mybt1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Double numero1, numero2, numero3;
+                String numero;
+
+                numero = myedt1.getText().toString(); // siempre hay que hacer el toString
+                numero1 = Double.parseDouble(numero);
+
+                numero = myedt2.getText().toString(); // siempre hay que hacer el toString
+                numero2 = Double.parseDouble(numero);
+
+                numero3 = numero1 + numero2;
+                mytv3.setText(String.valueOf(numero3));
+            }
+        });
+    }
+
+    */
 
 
     /*

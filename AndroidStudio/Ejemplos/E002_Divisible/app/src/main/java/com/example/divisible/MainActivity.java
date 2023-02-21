@@ -55,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     // verificar si es aleatorio o no
+    // asi no ponemos en el onClick de comprobar la funcion verificar
     public void verificar(){
 
         mybtnComprobar.setOnClickListener(new View.OnClickListener() {
@@ -66,19 +67,22 @@ public class MainActivity extends AppCompatActivity {
                 // comprobar si no esta vacio el aleatorio, si existe
                 if (!strAleatorio.isEmpty()) {
                     int random = Integer.parseInt(strAleatorio);
+
+                    // es divisible hasta que se demuestre lo contrario:
                     boolean flag = true;
 
                     if(flag){
 
-                        // 2 (si no es divisible, es falso)
-                        // si esta checkeado y si divisible por 2 te has equivocado
                         // hay que comprobar los falsos
+
+                        // 2
+                        // si esta checkeado y no es divisible por 2: te has equivocado
                         if(mycb2.isChecked()){
                             if(random%2!=0){
                                 flag=false;
                             }
                         }
-                        // no checkeado y sí divisible por 2 te has equivocado
+                        // no checkeado y sí divisible por 2: te has equivocado
                         else{
                             if(random%2==0){
                                 flag=false;
@@ -86,12 +90,13 @@ public class MainActivity extends AppCompatActivity {
                         }
 
                         // 3
+                        // si esta checkeado y no es divisible por 3: te has equivocado
                         if(mycb3.isChecked()){
                             if(random%3!=0){
                                 flag=false;
                             }
                         }
-                        // no checkeado
+                        // no checkeado y sí divisible por 3: te has equivocado
                         else{
                             if(random%3==0){
                                 flag=false;
@@ -99,12 +104,13 @@ public class MainActivity extends AppCompatActivity {
                         }
 
                         // 5
+                        // si esta checkeado y no es divisible por 5: te has equivocado
                         if(mycb5.isChecked()){
                             if(random%5!=0){
                                 flag=false;
                             }
                         }
-                        // no checkeado
+                        // no checkeado y sí divisible por 3: te has equivocado
                         else{
                             if(random%5==0){
                                 flag=false;
@@ -112,21 +118,23 @@ public class MainActivity extends AppCompatActivity {
                         }
 
                         // 10
+                        // si esta checkeado y no es divisible por 10: te has equivocado
                         if(mycb10.isChecked()){
                             if(random%10!=0){
                                 flag=false;
                             }
                         }
-                        // no checkeado
+                        // no checkeado y sí divisible por 10: te has equivocado
                         else{
                             if(random%10==0){
                                 flag=false;
                             }
                         }
 
-                        //ninguno
-                        if(mycbNo.isChecked() & !flag){
-
+                        // si hay algo checkeado y ademas esta el de ninguno checkeado: te has equivocado
+                        if(mycbNo.isChecked() &
+                          (mycb2.isChecked() || mycb3.isChecked() || mycb5.isChecked() || mycb10.isChecked())){
+                            flag = false;
                         }
 
                         // No es divisible entre ninguno: flag = true
@@ -137,7 +145,6 @@ public class MainActivity extends AppCompatActivity {
                             mytvComprobar.setText("CORRECTO");
                             mytvComprobar.setBackgroundColor(Color.GREEN);
                             mytvComprobar.setTextColor(Color.WHITE);
-                            flag = false;
 
                         }
                         else{

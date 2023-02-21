@@ -21,6 +21,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import android.graphics.drawable.AnimationDrawable;
 
 
 // Duda: Cuando se pasa el View v a un metodo?
@@ -36,12 +37,16 @@ public class MainActivity extends AppCompatActivity {
     ImageView myivDado1, myivDado2;
     TextView mytvDado1, mytvDado2;
 
-    ImageView myivXML_loader;
+    // Dados dinamicos: intento 2
+    // ImageView myivXML_loader;
 
     // Handler, como crear un hilo
     Handler handler = new Handler();
 
+    // Controlar Toast de errores
     int errorComprobacion = 0;
+
+    // Cargar gifs de una url de internet
     String stringResultado = "";
     String urlImagenDados = "http://clipart-library.com/images/qcBX8Xp8i.gif";
 
@@ -58,9 +63,7 @@ public class MainActivity extends AppCompatActivity {
         myradioBtnMayorMenor = (RadioButton) findViewById(R.id.radioBtnMayorMenor);
 
         myspinnerOpcion = (Spinner) findViewById(R.id.spinnerOpcion);
-
         myeditTextNumber = (EditText) findViewById(R.id.editTextNumber);
-
         mybtnLanzar = (Button) findViewById(R.id.btnLanzar);
 
         // dados estaticos
@@ -73,8 +76,8 @@ public class MainActivity extends AppCompatActivity {
         Glide.with(getApplicationContext()).load(urlparse).into(myivDado1);
         Glide.with(getApplicationContext()).load(urlparse).into(myivDado2);
 
-        // dados dinamicos AlertView
-        myivXML_loader = (ImageView) findViewById(R.id.ivXML_loader);
+        // dados dinamicos: intento 2 - AlertView
+        // myivXML_loader = (ImageView) findViewById(R.id.ivXML_loader);
 
         mytvDado1 = (TextView) findViewById(R.id.tvDado1);
         mytvDado2 = (TextView) findViewById(R.id.tvDado2);
@@ -108,21 +111,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+        // puedes comentarlo y agregarlo al onClick del boton 'Lanzar los dados'
         lanzarDados();
-
-
-    }
-
-    // Generar valores aleatorios para los dados
-    public void randomDados(View v){
-        Integer dado1, dado2;
-
-        // int nRandom = (int) (Math.random() * (max - min + 1) + min);
-        dado1 = (int) (Math.random() * (6 - 1 + 1) + 1);
-        dado2 = (int) (Math.random() * (6 - 1 + 1) + 1);
-
-        mytvDado1.setText(String.valueOf(dado1));
-        mytvDado2.setText(String.valueOf(dado2));
 
     }
 
@@ -199,7 +189,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
+    // la funcion lanzar dados
     public void lanzarDados(){
 
         // Darle al botoncito
@@ -222,18 +212,17 @@ public class MainActivity extends AppCompatActivity {
                    saldoMayorqueApuesta(v)){
 
 
-                    // Intento 1:
+                    // Intento 1: sacar el gif de los dados
                     gifDados(v);
 
                     // Intento 2: pasarle la imagen, si no no va (no va)
                     // gifDados(myivXML_loader);
 
+                    // Conseguir un valor aleatorio para los dados
                     randomDados(v);
-
 
                     // haciendo que el boton no sea clickable hasta que hayan pasado 4000ms
                     mybtnLanzar.setEnabled(false);
-
 
                     handler.postDelayed(new Runnable() {
                         @Override
@@ -242,8 +231,7 @@ public class MainActivity extends AppCompatActivity {
                             seguirJugando();
                             mybtnLanzar.setEnabled(true);
                         }
-                    }, 4000);
-
+                    }, 3000);
 
                 }
                 else{
@@ -286,13 +274,29 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    // Generar valores aleatorios para los dados
+    public void randomDados(View v){
+        Integer dado1, dado2;
+
+        // int nRandom = (int) (Math.random() * (max - min + 1) + min);
+        dado1 = (int) (Math.random() * (6 - 1 + 1) + 1);
+        dado2 = (int) (Math.random() * (6 - 1 + 1) + 1);
+
+        mytvDado1.setText(String.valueOf(dado1));
+        mytvDado2.setText(String.valueOf(dado2));
+
+    }
+
+
     // Lanzar los dados con un gif (intento 1: fallido - imagen estatica)
     public void gifDados(View v){
         int duracion = Toast.LENGTH_LONG;
         Toast toastdados = new Toast(MainActivity.this);
         toastdados.setDuration(duracion);
+
         LayoutInflater myInflator = getLayoutInflater();
         View myLayout = myInflator.inflate(R.layout.daditos_layout, null);
+
         toastdados.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
         toastdados.setView(myLayout);
         toastdados.show();
@@ -382,10 +386,13 @@ public class MainActivity extends AppCompatActivity {
         mytvSaldoNum.setText(String.valueOf(saldo));
     }
 
+
     public void seguirJugando(){
         AlertDialog.Builder MyAlert = new AlertDialog.Builder(MainActivity.this);
+
         MyAlert.setTitle("DICE ROLL");
         MyAlert.setMessage("¿Quieres tirar los dados?");
+
         MyAlert.setPositiveButton("SI", null);
         MyAlert.setNegativeButton("SALIR DEL JUEGO", new DialogInterface.OnClickListener() {
             @Override
@@ -393,6 +400,7 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         });
+
         AlertDialog dialog = MyAlert.create();
         dialog.show();
 

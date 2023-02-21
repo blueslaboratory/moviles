@@ -17,7 +17,6 @@ public class MainActivity extends AppCompatActivity {
 
     ImageView myiV1;
     AnimationDrawable miTragaperras ;
-    ImageView myImageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

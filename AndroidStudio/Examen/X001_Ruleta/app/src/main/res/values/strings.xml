@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Ruleta</string>
+    <string name="lanzame">¡Lanzame!</string>
+
+    <!-- array par/impar -->
+    <string-array name="array_par_impar">
+        <item>Par</item>
+        <item>Impar</item>
+    </string-array>
+
+    <!-- array mayor/menor -->
+    <string-array name="array_docenas">
+        <item>Primera Docena</item>
+        <item>Segunda Docena</item>
+        <item>Tercera Docena</item>
+    </string-array>
+</resources>

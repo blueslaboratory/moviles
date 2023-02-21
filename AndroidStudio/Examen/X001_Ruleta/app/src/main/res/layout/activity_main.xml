@@ -4,14 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:onClick="lanzarDados"
     tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/btnNewPlayer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="125dp"
+        android:layout_marginTop="69dp"
+        android:text="Nuevo Jugador"
+        app:cornerRadius="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:layout_width="408dp"
         android:layout_height="52dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="160dp"
         android:background="#FFFFFF"
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
@@ -44,38 +53,38 @@
         android:layout_width="220dp"
         android:layout_height="100dp"
         android:layout_marginStart="92dp"
-        android:layout_marginTop="168dp"
+        android:layout_marginTop="272dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <RadioButton
             android:id="@+id/radioBtnParImpar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="53dp"
             android:text="Par/Impar" />
 
         <RadioButton
-            android:id="@+id/radioBtnMayorMenor"
+            android:id="@+id/radioBtnDocena"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Mayor/Menor que 7" />
+            android:text="Docena" />
     </RadioGroup>
 
     <Spinner
         android:id="@+id/spinnerOpcion"
-        android:layout_width="224dp"
-        android:layout_height="46dp"
-        android:layout_marginStart="92dp"
-        android:layout_marginTop="300dp"
+        android:layout_width="203dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="396dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextNumber"
+        android:id="@+id/edtApuesta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
-        android:layout_marginTop="380dp"
+        android:layout_marginTop="468dp"
         android:ems="10"
         android:gravity="center"
         android:hint="Haga su apuesta"
@@ -84,68 +93,23 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnLanzar"
-        android:layout_width="wrap_content"
+        android:id="@+id/btnApostar"
+        android:layout_width="140dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="112dp"
-        android:layout_marginTop="448dp"
-        android:onClick="lanzarDados"
-        android:text="Lanzar los dados"
-        app:cornerRadius="15sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/ivDado1"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="112dp"
-        android:layout_marginTop="547dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/dice" />
-
-    <ImageView
-        android:id="@+id/ivDado2"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="236dp"
-        android:layout_marginTop="547dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/dice" />
-
-    <TextView
-        android:id="@+id/tvDado1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="112dp"
-        android:layout_marginTop="628dp"
-        android:gravity="center|center_horizontal|center_vertical"
-        android:text="¡Lánzalo!"
-        android:textAlignment="center"
+        android:layout_marginStart="135dp"
+        android:layout_marginTop="558dp"
+        android:text="No va más"
+        app:cornerRadius="15dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tvDado2"
+        android:id="@+id/tvResultadoLanzamiento"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="238dp"
-        android:layout_marginTop="628dp"
-        android:gravity="center|center_horizontal|center_vertical"
-        android:text="¡Lánzalo!"
-        android:textAlignment="center"
+        android:layout_marginStart="172dp"
+        android:layout_marginTop="640dp"
+        android:text="@string/lanzame"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/ivXML_loader"
-        android:layout_width="241dp"
-        android:layout_height="241dp"
-        android:layout_marginStart="84dp"
-        android:layout_marginTop="252dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

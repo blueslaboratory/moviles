@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,7 +24,8 @@ public class MainActivity extends AppCompatActivity {
 
     ImageView myImageView;
 
-
+    // Handler, como crear un hilo
+    Handler handler = new Handler();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,11 +35,14 @@ public class MainActivity extends AppCompatActivity {
 
 
     // Boton Toast
+    // Seteado en el onClick de activity_main.xml
     public void verToast(View view) {
 
         LayoutInflater myInflter = getLayoutInflater();
         View myLayout = myInflter.inflate(R.layout.layout_toast, null);
+
         Toast myToast = new Toast(getApplicationContext());
+
         myToast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
         myToast.setDuration(Toast.LENGTH_LONG);
         myToast.setView(myLayout);
@@ -95,7 +100,15 @@ public class MainActivity extends AppCompatActivity {
 
     private void paquete(){
         myImageView = findViewById(R.id.iv1);
-        myImageView.setImageResource( R.drawable.patricio2);
+        myImageView.setImageResource(R.drawable.patricio2);
+
+        // haciendola desaparecer con un handler
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                myImageView.setVisibility(View.INVISIBLE);
+            }
+        }, 3000);
     }
 
 
@@ -113,7 +126,7 @@ public class MainActivity extends AppCompatActivity {
         MyAlert.setItems(R.array.deportes, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                // i indica la posición del array clickeada
+                // i indica la posición del array clickeado
                 pinta_deporte(i);
             }
         });
