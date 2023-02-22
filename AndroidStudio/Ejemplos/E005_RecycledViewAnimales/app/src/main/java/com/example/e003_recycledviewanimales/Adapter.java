@@ -81,14 +81,13 @@ public class Adapter extends RecyclerView.Adapter <Adapter.ViewHolder>{
         });
     }
 
+
     // total numero de filas
     // cuenta el tamano del array
     @Override
     public int getItemCount() {
         return misdatos.size();
     }
-
-
 
 
     // Intern class: clase dentro de clase
@@ -100,4 +99,17 @@ public class Adapter extends RecyclerView.Adapter <Adapter.ViewHolder>{
             myTextView = itemView.findViewById(R.id.tv1);
         }
     }
+
+
+
+    // 22/02/2023
+    public int getPosicionSeleccionada(){
+        return posicionSeleccionada;
+    }
+    // reiniciar la posicion original seleccionada:
+    public void setPosicionSeleccionada() {
+        posicionSeleccionada = RecyclerView.NO_POSITION;
+    }
+
+
 }

@@ -2,6 +2,16 @@ Abrir android Studio
 $ sudo /opt/android-studio/bin/studio.sh
 _____________________________________________________
 
+
+Emulador utilizado:
+Pixel 3a API 26
+Oreo API 26 x86
+
+
+
+_____________________________________________________
+
+
 Problemas con build.gradle:
 
 // /media/alejandro/METAL SANDISK/IES CLARA/Moviles/AndroidProjects/AndroidStudio/MensajesUsuario/app/build.gradle
