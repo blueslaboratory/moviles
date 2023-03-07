@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">E006_AppBar</string>
+    <string name="titulo">App Bar</string>
+
+    <string name="roja">Roja</string>
+    <string name="azul">Azul</string>
+    <string name="indeciso">Sal corriendo</string>
+
+
+    <!-- Toolbar -->
+    <string-array name="array_navegacion">
+        <item>Item1</item>
+        <item>Item2</item>
+        <item>Item3</item>
+    </string-array>
+
+</resources>

@@ -1,6 +1,7 @@
 package com.example.e003_recycledviewanimales;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -49,12 +50,18 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
 
 
-        //22/02/2023
+        // 22/02/2023
         // Metemos una division entre las filas (finas lineas entre los animales)
         DividerItemDecoration midividerItemDecoration =
                 new DividerItemDecoration(recyclerView.getContext(),
                 myLayout.getOrientation());
         recyclerView.addItemDecoration(midividerItemDecoration);
+
+
+        // 22/02/2023
+        DefaultItemAnimator midefaultItemAnimator = new DefaultItemAnimator();
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+        recyclerView.animate();
 
     }
 
