@@ -1,4 +1,4 @@
-package com.example.e003_recycledviewanimales;
+package com.example.p002_conversordivisas;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -15,14 +15,15 @@ import java.util.List;
 public class Adapter extends RecyclerView.Adapter <Adapter.ViewHolder>{
 
     private int posicionSeleccionada = RecyclerView.NO_POSITION;
-    List<String> misdatos;
+    List<Divisas> misdatos;
     LayoutInflater miInflador;
     // desde el activity main le diremos al adapter que ese es su contexto
     Context miContexto;
 
+    boolean onClickLong = false;
 
     // Constructor
-    public Adapter(List<String> datos, Context contexto){
+    public Adapter(List<Divisas> datos, Context contexto){
         misdatos = datos;
         miContexto = contexto;
         miInflador = LayoutInflater.from(contexto);
@@ -36,19 +37,29 @@ public class Adapter extends RecyclerView.Adapter <Adapter.ViewHolder>{
     // Infla cada fila del layout que hemos hecho para cada fila
     // este metodo lo que hace es construir las filas
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = miInflador.inflate(R.layout.my_row, parent, false);
+        View view = miInflador.inflate(R.layout.my_row_divisa, parent, false);
         return new ViewHolder(view);
     }
 
-    // Recupera la posicion del array en el que estamos y asigna en TextView el nombre del animal
+    // Recupera la posicion del array en el que estamos y asigna en TextView el nombre de la divisa
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        String animales = misdatos.get(position);
-        holder.myTextView.setText(animales);
+        String divisasCodigo = misdatos.get(position).getCodigo();
+        holder.myTextView.setText(divisasCodigo);
 
-        if(posicionSeleccionada == position){
-            holder.myTextView.setBackgroundColor(Color.RED);
+        // si esta posicionado ahi y onClickLong es false
+        if(posicionSeleccionada == position && !onClickLong){
+            holder.myTextView.setBackgroundColor(Color.BLUE);
             holder.myTextView.setTextColor(Color.WHITE);
+            // Cogiendo el nombre largo de la divisa (no solo por el codigo)
+            holder.myTextView.setText(misdatos.get(position).getName());
+        }
+        else if(posicionSeleccionada == position && onClickLong){
+            holder.myTextView.setBackgroundColor(Color.LTGRAY);
+            holder.myTextView.setTextColor(Color.WHITE);
+            // Cogiendo el valor del tipo de cambio
+            holder.myTextView.setText(misdatos.get(position).getValue());
+
         }
         else{
             holder.myTextView.setBackgroundColor(Color.WHITE);
@@ -60,9 +71,13 @@ public class Adapter extends RecyclerView.Adapter <Adapter.ViewHolder>{
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                onClickLong = false;
+
+                // guardar la posicion seleccionada
                 notifyItemChanged(posicionSeleccionada);
                 posicionSeleccionada=position;
                 notifyItemChanged(posicionSeleccionada);
+
 
                 // holder.myTextView.setBackgroundColor(Color.RED);
                 // holder.myTextView.setTextColor(Color.WHITE);
@@ -73,8 +88,14 @@ public class Adapter extends RecyclerView.Adapter <Adapter.ViewHolder>{
         holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {
-                holder.myTextView.setBackgroundColor(Color.WHITE);
-                holder.myTextView.setTextColor(Color.BLACK);
+                onClickLong = true;
+
+                // guardar la posicion seleccionada
+                notifyItemChanged(posicionSeleccionada);
+                posicionSeleccionada=position;
+                notifyItemChanged(posicionSeleccionada);
+
+
 
                 return true;
             }
@@ -96,7 +117,7 @@ public class Adapter extends RecyclerView.Adapter <Adapter.ViewHolder>{
         TextView myTextView;
         ViewHolder(View itemView) {
             super(itemView);
-            myTextView = itemView.findViewById(R.id.tv1);
+            myTextView = itemView.findViewById(R.id.tvDivisa);
         }
     }
 
