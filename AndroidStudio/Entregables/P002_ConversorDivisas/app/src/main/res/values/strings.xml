@@ -43,4 +43,17 @@
         <item>18.030472</item>
         <item>83.219626</item>
     </string-array>
+
+    <string-array name="divisas_simbolo">
+        <item>$</item>
+        <item>£</item>
+        <item>C$</item>
+        <item>A$</item>
+        <item>¥</item>
+        <item>₹</item>
+        <item>NZ$</item>
+        <item>Fr</item>
+        <item>R</item>
+        <item>₽</item>
+    </string-array>
 </resources>

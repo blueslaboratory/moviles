@@ -31,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
     TextView mytvMostrarCantidad;
     Switch mySwitchVip;
 
+    int defaultValue = -1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,11 +40,12 @@ public class MainActivity extends AppCompatActivity {
 
         String[] divisasNames = getResources().getStringArray(R.array.nombres_divisas);
         String[] divisasCodigos = getResources().getStringArray(R.array.codigo_divisas);
-        String[] divisasCamio = getResources().getStringArray(R.array.divisas_cambio);
+        String[] divisasCambio = getResources().getStringArray(R.array.divisas_cambio);
+        String[] divisasSimbolo = getResources().getStringArray(R.array.divisas_simbolo);
 
 
         for(int i=0; i<divisasNames.length; i++){
-            Divisas divisa = new Divisas(divisasNames[i], divisasCodigos[i], divisasCamio[i]);
+            Divisas divisa = new Divisas(divisasNames[i], divisasCodigos[i], divisasCambio[i], divisasSimbolo[i]);
             divisas.add(divisa);
         }
 
@@ -90,7 +93,8 @@ public class MainActivity extends AppCompatActivity {
                     float cambioActual = Float.parseFloat(divisas.get(posicionSeleccionada).getValue());
                     float cantDecimal = Float.parseFloat(myetndCantidad.getText().toString());
 
-                    mytvMostrarCantidad.setText(String.valueOf(cantDecimal*cambioActual*switchComision));
+                    mytvMostrarCantidad.setText(String.valueOf(cantDecimal*cambioActual*switchComision)
+                                               +String.valueOf(divisas.get(posicionSeleccionada).getSimbolo()));
                 }
 
 
@@ -110,7 +114,11 @@ public class MainActivity extends AppCompatActivity {
                     switchComision = 1F;
                 }
 
-                if(myetndCantidad.getText().toString().isEmpty()){
+                if(defaultValue == adapter.getPosicionSeleccionada()){
+                    Toast.makeText(MainActivity.this,"No se ha realizado la conversion",
+                            Toast.LENGTH_SHORT).show();
+                }
+                else if(myetndCantidad.getText().toString().isEmpty()){
                     Toast.makeText(MainActivity.this,"No hay cantidad",
                             Toast.LENGTH_SHORT).show();
                 }
@@ -125,7 +133,8 @@ public class MainActivity extends AppCompatActivity {
                     float cambioActual = Float.parseFloat(divisas.get(posicionSeleccionada).getValue());
                     float cantDecimal = Float.parseFloat(myetndCantidad.getText().toString());
 
-                    mytvMostrarCantidad.setText(String.valueOf(cantDecimal*cambioActual*switchComision));
+                    mytvMostrarCantidad.setText(String.valueOf(cantDecimal*cambioActual*switchComision)
+                                               +String.valueOf(divisas.get(posicionSeleccionada).getSimbolo()));
                 }
             }
         });

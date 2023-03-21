@@ -13,17 +13,17 @@
         android:layout_marginStart="100dp"
         android:layout_marginTop="56dp"
         android:ems="10"
-        android:inputType="number"
+        android:inputType="textEmailAddress"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnAdd"
-        android:layout_width="417dp"
-        android:layout_height="41dp"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
         android:layout_marginTop="120dp"
-        android:onClick="aniadirProgreso"
-        android:text="Añadir Progreso"
+        android:onClick="addPref"
+        android:text="Añadir Preferencias"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -33,18 +33,28 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="168dp"
         android:layout_marginTop="228dp"
-        android:text="TextView"
+        android:hint="Progreso"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnView"
-        android:layout_width="413dp"
-        android:layout_height="41dp"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
         android:layout_marginTop="266dp"
-        android:onClick="verProgreso"
+        android:onClick="recuperarEmail"
         android:text="Ver progreso"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnActividad"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="341dp"
+        android:onClick="abrir_activity2"
+        android:text="ver actividad"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

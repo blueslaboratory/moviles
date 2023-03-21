@@ -4,14 +4,15 @@ import java.util.ArrayList;
 
 public class Divisas {
 
-    String name, codigo, value;
+    String name, codigo, value, simbolo;
 
     // Constructor: ALT + INSERT
     // boton derecho del mouse --> Generate
-    public Divisas(String name, String codigo, String value) {
+    public Divisas(String name, String codigo, String value, String simbolo) {
         this.name = name;
         this.codigo = codigo;
         this.value = value;
+        this.simbolo = simbolo;
     }
 
 
@@ -25,6 +26,9 @@ public class Divisas {
     public String getValue() {
         return value;
     }
+    public String getSimbolo() {
+        return simbolo;
+    }
 
 
     // Setters: ALT + INSERT
@@ -36,6 +40,9 @@ public class Divisas {
     }
     public void setValue(String value) {
         this.value = value;
+    }
+    public void setSimbolo(String simbolo) {
+        this.simbolo = simbolo;
     }
 
 }
