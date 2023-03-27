@@ -20,7 +20,7 @@
             android:id="@+id/bt_alta"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:onClick="alta_no_sql"
+            android:onClick="alta"
             android:text="Alta" />
 
         <Button
@@ -90,7 +90,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="consultaPorCodigo_SQL"
+            android:onClick="consulta_cod"
             android:text="Cons. Cod." />
 
         <Button
@@ -98,7 +98,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="consultapordescripcion"
+            android:onClick="consultaPorDescripcion"
             android:text="Cons. Desc." />
 
     </LinearLayout>

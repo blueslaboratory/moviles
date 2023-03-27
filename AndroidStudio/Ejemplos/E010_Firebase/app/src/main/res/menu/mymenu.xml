@@ -1,0 +1,18 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/clase"
+        android:icon="@drawable/group_add_48px"
+        android:title="Clase"
+        android:orderInCategory="100"
+        app:showAsAction="ifRoom" />
+    <item android:id="@+id/alumno"
+        android:icon="@drawable/person_add_48px"
+        android:title="Alumno"
+        android:orderInCategory="150"
+        app:showAsAction="ifRoom" />
+    <item android:id="@+id/buscar"
+        android:icon="@drawable/person_search_48px"
+        android:title="Buscar"
+        android:orderInCategory="200"
+        app:showAsAction="ifRoom" />
+</menu>

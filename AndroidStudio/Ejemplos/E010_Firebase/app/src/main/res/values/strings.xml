@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">E010_Firebase</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="Curso">
+        <item>""</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+    <string-array name="Comparacion">
+        <item>""</item>
+        <item>Menor</item>
+        <item>Mayor o igual</item>
+    </string-array>
+</resources>

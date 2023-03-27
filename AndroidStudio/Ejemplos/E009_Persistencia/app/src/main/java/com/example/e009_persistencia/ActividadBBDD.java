@@ -69,6 +69,39 @@ public class ActividadBBDD extends AppCompatActivity {
         }
     }
 
+
+    // 22/03/2023
+    public void alta_sql(View v) {
+        // Si hemos abierto correctamente la base de datos
+        if(MiBBDD != null){
+            String cod = edtcodigo.getText().toString();
+            String desc = edtdesc.getText().toString();
+            String precio = edtprecio.getText().toString();
+            String sql;
+
+            // Insertamos los datos en la tabla Usuarios
+            sql = "INSERT INTO articulos VALUES (" +cod +", '" +desc +"', " +precio +")";
+            MiBBDD.execSQL(sql);
+            edtcodigo.setText("");
+            edtdesc.setText("");
+            edtprecio.setText("");
+
+            Toast.makeText(this, "Se cargaron los datos del articulo", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
+    // 22/03/2023
+    public void alta(View v){
+        if(bt_switch.isChecked()){
+            alta_sql(v);
+        }
+        else{
+            alta_no_sql(v);
+        }
+    }
+
+
     public void consultaPorCodigo_SQL(View v){
         String cod = edtcodigo.getText().toString();
         Cursor fila = MiBBDD.rawQuery(
@@ -83,6 +116,34 @@ public class ActividadBBDD extends AppCompatActivity {
                     Toast.LENGTH_SHORT).show();
         }
     }
+
+    //22/03/2023
+    public void consultaPorCodigo_no_SQL(View v){
+        String cod = edtcodigo.getText().toString();
+        String[] campos = new String[] {"descripcion", "precio"};
+        String[] args = new String[] {cod};
+
+        Cursor fila = MiBBDD.query("articulos", campos, "codigo=?", args, null, null, null);
+
+        if(fila.moveToFirst()){
+            edtdesc.setText(fila.getString(0));
+            edtprecio.setText(fila.getString(1));
+        }
+        else{
+            Toast.makeText(this, "No existe un articulo con dicho codigo", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
+    public void consulta_cod(View v){
+        if(bt_switch.isChecked()){
+            consultaPorCodigo_SQL(v);
+        }
+        else{
+            consultaPorCodigo_no_SQL(v);
+        }
+    }
+
 
     public void bajaPorCodigo(View v){
         String cod = edtcodigo.getText().toString();
@@ -99,6 +160,54 @@ public class ActividadBBDD extends AppCompatActivity {
         else{
             Toast.makeText(this, "No existe un articulo con dicho codigo",
                     Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
+    //23/03/2023
+    public void modificacion(View v){
+        String cod = edtcodigo.getText().toString();
+        String desc = edtdesc.getText().toString();
+        String precio = edtprecio.getText().toString();
+
+        ContentValues registro = new ContentValues();
+
+        registro.put("codigo", cod);
+        registro.put("descripcion", desc);
+        registro.put("precio", precio);
+
+        int cant = MiBBDD.update("articulos", registro, "codigo=" +cod, null);
+        if(cant==1){
+            Toast.makeText(this, "se modificaron los datos", Toast.LENGTH_SHORT).show();
+        }
+        else{
+            Toast.makeText(this, "no existe un articulo con el codigo ingresado", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
+    //23/03/2023
+    public  void consultaPorDescripcion(View v){
+        String desc = edtdesc.getText().toString();
+        String cadena = "";
+        Cursor c = MiBBDD.rawQuery(
+                "select codigo, descripcion, precio from articulos where descripcion like '%" +desc + "%'", null
+        );
+
+
+        // Nos aseguramos de que existe al menos un registro
+        if(c.moveToFirst()){
+            // Recorremos el cursor hasta que no haya más registros
+            do{
+                String codigo = c.getString(0);
+                String descripcion = c.getString(1);
+                cadena += codigo +"-" +descripcion +System.getProperty("line.separator");
+            } while(c.moveToNext());
+
+            edtcodigo.setText(cadena);
+        }
+        else{
+            Toast.makeText(this, "No existe un articulo con dicha descripcion", Toast.LENGTH_SHORT).show();
         }
     }
 }
