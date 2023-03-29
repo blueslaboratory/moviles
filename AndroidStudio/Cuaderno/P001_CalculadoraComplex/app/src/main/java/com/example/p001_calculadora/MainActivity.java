@@ -8,9 +8,9 @@ import android.widget.Button;
 import android.widget.TextView;
 
 // 07/02/2023
-// Error: puedes poner varios puntos, no se valida numero por numero al darle al boton de operacion
-// dar a = da error
-// dar a = da error
+// 29/03/2023
+// Va a ser de solo 2 numeros a la vez
+
 
 // Titulos de videos de calculadoras de youtube:
 // How to Create Calculator in Java NetBeans Full Tutorial
@@ -27,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
     Button mybtn1, mybtn2, mybtn3, mybtnSubstract;
 
     Button mybtn0, mybtnPoint, mybtnEqual;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
         try {
             Thread.sleep(3000);
             mytvOperation.setText("");
+
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -100,13 +100,10 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String input = mytvOperation.getText().toString();
 
-                try {
-                    Thread.sleep(500);
-                    mytvOperation.setText(operacion(view));
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+                mytvOperation.setText(operacion(input));
 
+                // habilitar +-*/
+                habilitarOperaciones();
             }
         });
 
@@ -124,6 +121,12 @@ public class MainActivity extends AppCompatActivity {
                 if (input.charAt(input.length()-1) != '.' &&
                     !checkSymbol(input.charAt(input.length()-1))) {
                     mytvOperation.setText(input + "*");
+
+                    // Habilitar el boton del .
+                    mybtnPoint.setEnabled(true);
+
+                    // deshabilitar +-*/
+                    deshabilitarOperaciones();
                 }
             }
         });
@@ -136,6 +139,12 @@ public class MainActivity extends AppCompatActivity {
                 if (input.charAt(input.length()-1) != '.' &&
                     !checkSymbol(input.charAt(input.length()-1))) {
                     mytvOperation.setText(input + "/");
+
+                    // Habilitar el boton del .
+                    mybtnPoint.setEnabled(true);
+
+                    // deshabilitar +-*/
+                    deshabilitarOperaciones();
                 }
             }
         });
@@ -148,6 +157,12 @@ public class MainActivity extends AppCompatActivity {
                 if (input.charAt(input.length()-1) != '.' &&
                     !checkSymbol(input.charAt(input.length()-1))) {
                     mytvOperation.setText(input + "+");
+
+                    // Habilitar el boton del .
+                    mybtnPoint.setEnabled(true);
+
+                    // deshabilitar +-*/
+                    deshabilitarOperaciones();
                 }
             }
         });
@@ -160,6 +175,12 @@ public class MainActivity extends AppCompatActivity {
                 if (input.charAt(input.length()-1) != '.' &&
                     !checkSymbol(input.charAt(input.length()-1))) {
                     mytvOperation.setText(input + "-");
+
+                    // Habilitar el boton del .
+                    mybtnPoint.setEnabled(true);
+
+                    // deshabilitar +-*/
+                    deshabilitarOperaciones();
                 }
             }
         });
@@ -255,16 +276,18 @@ public class MainActivity extends AppCompatActivity {
                 if(input.charAt(input.length()-1)!='.' &&
                    !checkSymbol(input.charAt(input.length()-1))) {
                     mytvOperation.setText(input + ".");
+
+                    // deshabilitar el boton despues de un solo uso
+                    mybtnPoint.setEnabled(false);
                 }
             }
         });
     }
 
 
-    // validar 1 numero con solo 1 .
-    // validar 2 numero con solo 1 .
+
     // proceder a la operacion
-    public String operacion(View v){
+    public String operacion(String StringOperacion){
         char simbolo = ' ';
         String cadOperacion;
         String solucion = "";
@@ -287,16 +310,19 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     n1 += c;
                 }
-            } else if(checkSymbol(c)) {
-                // Si es un simbolo, lo guardas en la variable simbolo y limpias
+            }
+            else if(checkSymbol(c)) {
+                // Si es un simbolo, lo guardas en la variable simbolo
                 simbolo = c;
-                n1 = null;
                 posicion = i+1;
+
+                // saliendo del bucle
+                i = cadOperacion.length();
             }
         }
 
 
-        // coger el numero2 y el simbolo
+        // coger el numero2
         for(int i=posicion; i<cadOperacion.length(); i++) {
             char c = cadOperacion.charAt(i);
             if(checkNumber(c)) {
@@ -306,10 +332,6 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     n2 += c;
                 }
-            } else if(checkSymbol(c)) {
-                // Si es un simbolo, lo guardas en la variable simbolo y limpias
-                simbolo = c;
-                n2 = null;
             }
         }
 
@@ -336,13 +358,13 @@ public class MainActivity extends AppCompatActivity {
         return solucion;
     }
 
-    public boolean checkNumber(char c){
+    public static boolean checkNumber(char c){
         boolean flag = false;
 
-        if(c==1 || c==2 || c==3 ||
-           c==4 || c==5 || c==6 ||
-           c==7 || c==8 || c==9 ||
-           c==0 || c=='.'){
+        if(c=='1' || c=='2' || c=='3' ||
+           c=='4' || c=='5' || c=='6' ||
+           c=='7' || c=='8' || c=='9' ||
+           c=='0' || c=='.'){
             flag = true;
         }
 
@@ -350,7 +372,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public boolean checkSymbol(char c){
+    public static boolean checkSymbol(char c){
         boolean flag = false;
 
         if(c=='+'|| c=='-' || c=='*' || c=='/' || c=='='){
@@ -361,7 +383,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public boolean checkPoint(String number){
+    public static boolean checkPoint(String number){
         boolean flag=false;
 
         for(int i=0; i<number.length(); i++) {
@@ -373,4 +395,20 @@ public class MainActivity extends AppCompatActivity {
         return flag;
     }
 
+
+    // habilitar botones de operaciones
+    public void habilitarOperaciones(){
+        mybtnMultiply.setEnabled(true);
+        mybtnDiv.setEnabled(true);
+        mybtnSum.setEnabled(true);
+        mybtnSubstract.setEnabled(true);
+    }
+
+    // deshabilitar los botones de operaciones
+    public void deshabilitarOperaciones(){
+        mybtnMultiply.setEnabled(false);
+        mybtnDiv.setEnabled(false);
+        mybtnSum.setEnabled(false);
+        mybtnSubstract.setEnabled(false);
+    }
 }

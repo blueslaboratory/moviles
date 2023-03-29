@@ -25,7 +25,7 @@ lugar donde va local properties
 /media/alejandro/MSI DATA/DOCUMENTS/DA2D1E-2/Moviles/AndroidStudio/pruebas/local.properties
 
 Nuevo sitio del SDK
-/opt/android-studio-sdk
+sdk.dir=/opt/android-studio-sdk
 
 _____________________________________________________
 Contenido local.properties:
