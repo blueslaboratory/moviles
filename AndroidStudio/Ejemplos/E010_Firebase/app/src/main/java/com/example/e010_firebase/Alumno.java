@@ -10,9 +10,9 @@ public class Alumno {
     public Alumno() {}
 
     public Alumno(String nombre, String documento, Integer edad) {
-        nombre = nombre;
-        documento = documento;
-        edad = edad;
+        this.nombre = nombre;
+        this.documento = documento;
+        this.edad = edad;
     }
 
     public String getNombre() {

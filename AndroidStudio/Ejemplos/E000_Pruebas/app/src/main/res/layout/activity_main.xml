@@ -74,6 +74,7 @@
         android:layout_marginTop="291dp"
         android:onClick="sumar"
         android:text="SUMAR"
+        android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

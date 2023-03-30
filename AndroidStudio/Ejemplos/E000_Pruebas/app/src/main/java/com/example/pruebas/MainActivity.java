@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
 
     /*
 
-    // En activity_main.xml no hace falta meter la funcion sumar en el onClick
+    // Con el metodo sumarSinOnClick en activity_main.xml no hace falta meter la funcion sumar en el onClick
     public void sumarSinOnClick(){
         mybt1.setOnClickListener(new View.OnClickListener() {
             @Override

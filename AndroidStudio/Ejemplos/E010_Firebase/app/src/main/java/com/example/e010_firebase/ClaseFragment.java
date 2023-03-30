@@ -3,8 +3,10 @@ package com.example.e010_firebase;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,7 +18,14 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.ListenerRegistration;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -74,6 +83,74 @@ public class ClaseFragment extends Fragment {
         tv_atributo = vista.findViewById(R.id.tv_campo);
 
 
+        // Escuchar lo que pasa en la base de datos firebase:
+        // (esto esta pensado para que cuando 2 tios esten atacando el mismo documento a ti se te actualice)
+        // sobre un documento que exista: ASIR
+        final DocumentReference docRef = my_db.collection("Clases").document("ASIR");
+
+        ListenerRegistration registration = docRef.addSnapshotListener(new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot snapshot,
+                                @Nullable FirebaseFirestoreException error) {
+                if (error!=null){
+                    Log.w("PRUEBAS", "Listen failed.", error);
+                    return;
+                }
+
+                if(snapshot != null && snapshot.exists()){
+                    Log.d("PRUEBAS", "Current data: " +snapshot.getData());
+                    tv_documento.setText(snapshot.getData().toString());
+                    String cambio = snapshot.getString("grado");
+                    tv_atributo.setText(cambio);
+                }
+                else {
+                    Log.d("PRUEBAS", "Current data: null");
+                }
+            }
+        });
+
+        // boton para parar la escucha
+        boton_pararEsc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                registration.remove();
+            }
+        });
+
+
+        // Escuchar todos los documentos de la coleccion clase donde curso es igual a 1
+        // Esto es un chat: sala = coleccion; mensajes = documentos; y lo metes en un recycled view
+        // Escuchar 1ºS
+        boton_Esc1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                my_db.collection("Clases")
+                        .whereEqualTo("curso", 1) // de la coleccion clases el curso == 1
+                        .addSnapshotListener(new EventListener<QuerySnapshot>() {
+                            @Override
+                            public void onEvent(@Nullable QuerySnapshot value,
+                                                @Nullable FirebaseFirestoreException error) {
+                                if (error != null){
+                                    Log.w("PRUEBAS", "Listen failed.", error);
+                                    return;
+                                }
+
+                                tv_atributo.setText("");
+                                for(QueryDocumentSnapshot doc:value){
+                                    Clase miclase = doc.toObject(Clase.class);
+                                    String atributo = tv_atributo.getText().toString();
+                                    atributo = atributo +doc.getId()+'-'+ miclase.getGrado()+'-'
+                                                        +miclase.getNumeroalumnos()
+                                                        // meter un salto de linea al textview
+                                                        +System.getProperty("line.separator");
+                                    tv_atributo.setText(atributo);
+                                }
+                            }
+                        });
+            }
+        });
+
+
         // Boton INSERT (MAPAS)
         // Inserta en firebase
         // https://console.firebase.google.com/project/
@@ -128,6 +205,7 @@ public class ClaseFragment extends Fragment {
             public void onClick(View view) {
                 grado = edtGrado.getText().toString();
                 codigo = edtCodigo.getText().toString();
+
                 numalum = Integer.parseInt(edtNumalum.getText().toString());
                 curso = spCurso.getSelectedItemId();
 

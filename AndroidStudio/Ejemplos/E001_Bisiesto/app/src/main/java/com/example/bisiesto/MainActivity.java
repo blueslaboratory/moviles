@@ -47,15 +47,14 @@ public class MainActivity extends AppCompatActivity {
     // switch
     // para pillarlo en el onClick hay que pasarle View v a la funcion
     // hay que especificar la funcion en el onClick del switch
-    public void fondoAmarillo(View v){
+    public void fondoAmarillo(View v) {
         myswitchFondo.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if(myswitchFondo.isChecked()){
+                if (myswitchFondo.isChecked()) {
                     mycl.setBackgroundColor(Color.parseColor("#f1f885"));
-                }
-                else{
+                } else {
                     mycl.setBackgroundColor(Color.WHITE);
                 }
             }
@@ -63,11 +62,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // crear un aleatorio
-    public void aleatorio(View v){
-        Integer aleatorio;
+    public void aleatorio(View v) {
+        int aleatorio;
 
         // int nRandom = (int) (Math.random() * (max - min + 1) + min);
-        aleatorio = (int) (Math.random() * (3000 - 0 + 1) + 0);
+        // 1582 es el primer year del calendario gregoriano
+        aleatorio = (int) (Math.random() * (6900 - 1582 + 1) + 1582);
         mytvAleatorio.setText(String.valueOf(aleatorio));
     }
 
@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
     // https://developer.android.com/guide/topics/ui/controls/radiobutton?hl=es-419#java
     // https://www.develou.com/radiobutton-android/
     // verificar si es bisiesto o no sin necesidad de poner la funcion en el onClick del boton
-    public void verificar(){
+    public void verificar() {
 
         mybtnVerificar.setOnClickListener(new View.OnClickListener() {
 
@@ -89,8 +89,8 @@ public class MainActivity extends AppCompatActivity {
                     int random = Integer.parseInt(strAleatorio);
 
                     // comprobar si hay un numero en el aleatorio
-                    if(Double.parseDouble(strAleatorio)>0){
-                        boolean check;
+                    if (Double.parseDouble(strAleatorio) > 0) {
+
                         if (!myyes.isChecked() && !myno.isChecked()) {
                             mytvVerificar.setText("marca un radio button");
                             mytvVerificar.setTextColor(Color.BLUE);
@@ -108,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
                             }
 
                             if (myno.isChecked()) {
-                                if (!(random % 4 == 0) && ((random % 100 != 0) || (random % 400 == 0))) {
+                                if ((random % 4 != 0) && ((random % 100 == 0) || (random % 400 != 0))) {
                                     mytvVerificar.setText("VERDADERO. No Bisiesto");
                                     mytvVerificar.setTextColor(Color.GREEN);
                                 } else {
@@ -120,8 +120,7 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }
 
-                }
-                else{
+                } else {
                     mytvVerificar.setText("genera un aleatorio");
                 }
             }
@@ -130,7 +129,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     // exit app
-    public void salir(View v){
+    public void salir(View v) {
         System.exit(0);
     }
 

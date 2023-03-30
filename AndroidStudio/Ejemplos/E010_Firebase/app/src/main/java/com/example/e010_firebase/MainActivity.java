@@ -61,13 +61,14 @@ public class MainActivity extends AppCompatActivity {
             fragment2 = ConsultarFragment.newInstance(my_db);
             my_transaction.replace(R.id.myFrameLayout, fragment2);
         }
+        */
         else if(id == R.id.alumno){
             //Paso 3: Crear un nuevo fragmento y añadirlo
-            ClaseFragment fragment3;
+            AlumnoFragment fragment3;
             fragment3 = AlumnoFragment.newInstance(my_db);
             my_transaction.replace(R.id.myFrameLayout, fragment3);
         }
-        */
+
 
 
         // Paso 4: Confirmar el cambio
