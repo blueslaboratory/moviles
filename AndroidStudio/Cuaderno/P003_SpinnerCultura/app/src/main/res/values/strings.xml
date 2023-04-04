@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">P003_SpinnerCultura</string>
+
+    <string-array name="Temas">
+        <item> </item>
+        <item>Serie</item>
+        <item>Grupo de música</item>
+        <item>Anime</item>
+    </string-array>
+</resources>

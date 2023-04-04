@@ -110,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
                                 flag=false;
                             }
                         }
-                        // no checkeado y sí divisible por 3: te has equivocado
+                        // no checkeado y sí divisible por 5: te has equivocado
                         else{
                             if(random%5==0){
                                 flag=false;
@@ -131,15 +131,14 @@ public class MainActivity extends AppCompatActivity {
                             }
                         }
 
-                        // si hay algo checkeado y ademas esta el de ninguno checkeado: te has equivocado
-                        if(mycbNo.isChecked() &
+                        // si esta el de de ninguno checkeado y ademas hay algo checkeado: te has equivocado
+                        if(mycbNo.isChecked() &&
                           (mycb2.isChecked() || mycb3.isChecked() || mycb5.isChecked() || mycb10.isChecked())){
                             flag = false;
                         }
 
-                        // No es divisible entre ninguno: flag = true
-                        // si flag es true, de momento podemos entrar
-                        // el resto de checkboxes no debe estar marcado porque si no es falso por defecto
+                        // si flag es true, podemos entrar
+                        // si no es divisible entre ninguno: flag = true
                         if(flag){
 
                             mytvComprobar.setText("CORRECTO");

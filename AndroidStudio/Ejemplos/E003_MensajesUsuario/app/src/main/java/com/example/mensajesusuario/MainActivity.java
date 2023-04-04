@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 
 // 31/01/2023
+// UT2.7 Mensajes de usuario Toast y AlertDialog
 // /media/alejandro/METAL SANDISK/IES CLARA/Moviles/AndroidProjects/AndroidStudio/MensajesUsuario
 // /app/build.gradle
 // cambiar el 32 por el 33
@@ -24,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
     ImageView myImageView;
 
-    // Handler, como crear un hilo
+    // Handler: como crear un hilo
     Handler handler = new Handler();
 
     @Override
@@ -38,8 +39,8 @@ public class MainActivity extends AppCompatActivity {
     // Seteado en el onClick de activity_main.xml
     public void verToast(View view) {
 
-        LayoutInflater myInflter = getLayoutInflater();
-        View myLayout = myInflter.inflate(R.layout.layout_toast, null);
+        LayoutInflater myInflater = getLayoutInflater();
+        View myLayout = myInflater.inflate(R.layout.layout_toast, null);
 
         Toast myToast = new Toast(getApplicationContext());
 
@@ -60,12 +61,13 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    // Boton Alerta
+    // 1/02/2023
+    // Boton AlertDialog
     public void myAlert(View vista){
         AlertDialog.Builder MyAlert = new AlertDialog.Builder(this);
 
         MyAlert.setTitle("CLASE PMDM DAW+DAM");
-        // 1/02/2023
+
         LayoutInflater myinflater = getLayoutInflater();
         View myView_Inflado = myinflater.inflate(R.layout.layout_login,null);
         MyAlert.setView(myView_Inflado);
@@ -108,9 +110,18 @@ public class MainActivity extends AppCompatActivity {
             public void run() {
                 myImageView.setVisibility(View.INVISIBLE);
             }
-        }, 3000);
+        }, 5000);
     }
 
+
+    private void hola (String nombre){
+        Context context = getApplicationContext();
+        String text = "Hola " + nombre;
+        int duration = Toast.LENGTH_LONG;
+
+        Toast toast = Toast.makeText(context, text, duration);
+        toast.show();
+    }
 
 
     // Boton alerta de Futbol
@@ -145,17 +156,14 @@ public class MainActivity extends AppCompatActivity {
                 text = "Opcion 1 - Futbol";
                 break;
             }
-
             case 1:{
                 text = "Opcion 2 - Futbolin";
                 break;
             }
-
             case 2:{
                 text = "Opcion 3 - Futbol sala";
                 break;
             }
-
             case 3:{
                 text = "Opcion 4 - Futbol 7";
                 break;
@@ -166,18 +174,5 @@ public class MainActivity extends AppCompatActivity {
         Toast toast = Toast.makeText(context, text, duration);
         toast.show();
     }
-
-
-    //01/02/2023
-    private void hola (String nombre){
-        Context context = getApplicationContext();
-        String text = "Hola " + nombre;
-        int duration = Toast.LENGTH_LONG;
-        Toast toast = Toast.makeText(context, text, duration);
-        toast.show();
-    }
-
-
-
 
 }

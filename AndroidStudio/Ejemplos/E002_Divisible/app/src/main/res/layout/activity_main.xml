@@ -97,9 +97,7 @@
             android:id="@+id/iv1"
             android:layout_width="76dp"
             android:layout_height="match_parent"
-            android:visibility="visible"
-            app:srcCompat="@drawable/clouds"
-            tools:srcCompat="@drawable/clouds" />
+            app:srcCompat="@drawable/clouds" />
 
         <TextView
             android:id="@+id/tvComprobar"
