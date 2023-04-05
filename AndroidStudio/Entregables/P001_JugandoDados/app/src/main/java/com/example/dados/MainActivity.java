@@ -25,6 +25,10 @@ import android.graphics.drawable.AnimationDrawable;
 
 
 // Duda: Cuando se pasa el View v a un metodo?
+/*
+El objeto View se pasa a un metodo en Android Studio cuando se necesita interactuar con la vista
+de alguna manera, como cambiar su contenido o asignar un comportamiento especifico a un evento.
+ */
 
 public class MainActivity extends AppCompatActivity {
 
@@ -40,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
     // Dados dinamicos: intento 2
     // ImageView myivXML_loader;
 
-    // Handler, como crear un hilo
+    // Handler: como crear un hilo
     Handler handler = new Handler();
 
     // Controlar Toast de errores
@@ -221,7 +225,7 @@ public class MainActivity extends AppCompatActivity {
                     // Conseguir un valor aleatorio para los dados
                     randomDados(v);
 
-                    // haciendo que el boton no sea clickable hasta que hayan pasado 4000ms
+                    // haciendo que el boton no sea clickable hasta que hayan pasado 3000ms
                     mybtnLanzar.setEnabled(false);
 
                     handler.postDelayed(new Runnable() {

@@ -122,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
         desorden = barajarCartas();
         mostrarTodasCartas(desorden);
 
-        // Ocultar el temporizador del juego
+        // Ocultar las cartas con un temporizador
         taparTemporizador();
 
         // Habilitar la interaccion del usuario con las cartas

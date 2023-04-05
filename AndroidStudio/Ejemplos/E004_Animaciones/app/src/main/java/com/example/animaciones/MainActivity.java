@@ -36,7 +36,12 @@ public class MainActivity extends AppCompatActivity {
     };
 
     // todos los metodos que vayas a llamar desde un control deben de recibir un View v
-    public void parar (View v){
+    public void start (View v){
+        miTragaperras.start();
+    }
+
+    // todos los metodos que vayas a llamar desde un control deben de recibir un View v
+    public void stop (View v){
         miTragaperras.stop();
     }
 }
