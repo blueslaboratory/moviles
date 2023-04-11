@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FragmentConsulta" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="CODIGO"
+                android:textAlignment="center"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/edtBusCod"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textAlignment="center"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/bt_buscar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Buscar por código" />
+
+        <TextView
+            android:id="@+id/tvBusqueda"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="TextView" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="CURSO"
+                android:textAlignment="center"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/spBusCurso"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:entries="@array/Curso" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/bt_buscarCurso"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Buscar por curso" />
+
+        <TextView
+            android:id="@+id/tv_busCurso"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:text="TextView" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+
+            <Spinner
+                android:id="@+id/sp_comparacion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="20"
+                android:entries="@array/Comparacion" />
+
+            <EditText
+                android:id="@+id/edtBuscEdad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="Edad"
+                android:inputType="number" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/bt_buscAlum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Buscar alumnos" />
+
+        <TextView
+            android:id="@+id/tv_alumnos"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:text="TextView" />
+
+        <Button
+            android:id="@+id/bt_buscaralumnosxcurso"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Buscar alumnos x curso" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

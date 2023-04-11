@@ -18,24 +18,24 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link AlumnoFragment#newInstance} factory method to
+ * Use the {@link FragmentAlumno#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class AlumnoFragment extends Fragment {
+public class FragmentAlumno extends Fragment {
 
    String Documento, Nombre, Clase;
    Integer Edad;
    private static FirebaseFirestore my_db;
 
 
-    public AlumnoFragment() {
+    public FragmentAlumno() {
         // Required empty public constructor
     }
 
 
     // TODO: Rename and change types and number of parameters
-    public static AlumnoFragment newInstance(FirebaseFirestore db) {
-        AlumnoFragment fragment = new AlumnoFragment();
+    public static FragmentAlumno newInstance(FirebaseFirestore db) {
+        FragmentAlumno fragment = new FragmentAlumno();
         my_db = db;
         return fragment;
     }

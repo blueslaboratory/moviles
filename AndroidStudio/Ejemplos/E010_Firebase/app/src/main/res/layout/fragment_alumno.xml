@@ -5,7 +5,7 @@
     android:id="@+id/ContraintLayoutAlumno"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AlumnoFragment">
+    tools:context=".FragmentAlumno">
 
     <TableLayout
         android:layout_width="match_parent"

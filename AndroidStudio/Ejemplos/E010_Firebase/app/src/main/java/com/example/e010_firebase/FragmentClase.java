@@ -32,11 +32,11 @@ import java.util.Map;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link ClaseFragment#newInstance} factory method to
+ * Use the {@link FragmentClase#newInstance} factory method to
  * create an instance of this fragment.
  */
 
-public class ClaseFragment extends Fragment {
+public class FragmentClase extends Fragment {
 
 
     // 28/03/2023
@@ -45,8 +45,8 @@ public class ClaseFragment extends Fragment {
     Integer numalum;
     Long curso;
 
-    public static ClaseFragment newInstance(FirebaseFirestore db) {
-        ClaseFragment fragment = new ClaseFragment();
+    public static FragmentClase newInstance(FirebaseFirestore db) {
+        FragmentClase fragment = new FragmentClase();
         my_db = db;
         return fragment;
     }

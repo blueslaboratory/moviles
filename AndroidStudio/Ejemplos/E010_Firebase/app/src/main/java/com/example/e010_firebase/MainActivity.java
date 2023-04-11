@@ -23,6 +23,9 @@ import com.google.firebase.firestore.FirebaseFirestore;
 // Formatear codigo: CTRL + ALT + L
 // Code --> Reformat Code
 
+// URLS Firebase
+// https://console.firebase.google.com/project/
+// https://console.firebase.google.com/project/e010-firebase/firestore/data/~2FClases~2FSI?hl=es
 
 public class MainActivity extends AppCompatActivity {
 
@@ -50,22 +53,20 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction my_transaction = my_fragmentManager.beginTransaction();
         if(id == R.id.clase){
             //Paso 3: Crear un nuevo fragmento y añadirlo
-            ClaseFragment fragment1;
-            fragment1 = ClaseFragment.newInstance(my_db);
+            FragmentClase fragment1;
+            fragment1 = FragmentClase.newInstance(my_db);
             my_transaction.replace(R.id.myFrameLayout, fragment1);
         }
-        /*
         else if(id == R.id.buscar){
             //Paso 3: Crear un nuevo fragmento y añadirlo
-            ClaseFragment fragment2;
-            fragment2 = ConsultarFragment.newInstance(my_db);
+            FragmentConsulta fragment2;
+            fragment2 = FragmentConsulta.newInstance(my_db);
             my_transaction.replace(R.id.myFrameLayout, fragment2);
         }
-        */
         else if(id == R.id.alumno){
             //Paso 3: Crear un nuevo fragmento y añadirlo
-            AlumnoFragment fragment3;
-            fragment3 = AlumnoFragment.newInstance(my_db);
+            FragmentAlumno fragment3;
+            fragment3 = FragmentAlumno.newInstance(my_db);
             my_transaction.replace(R.id.myFrameLayout, fragment3);
         }
 
