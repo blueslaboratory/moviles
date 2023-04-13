@@ -1,19 +1,18 @@
-package com.example.e008_navigationdrawer;
+package com.example.p003_navigationdrawer;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
 
+import androidx.fragment.app.Fragment;
 
-public class WebFragment extends Fragment {
+
+public class FragmentWeb extends Fragment {
 
 
-    public WebFragment() {
+    public FragmentWeb() {
         // Required empty public constructor
     }
 
@@ -27,7 +26,7 @@ public class WebFragment extends Fragment {
         // Inflate the layout for this fragment
         vista = inflater.inflate(R.layout.fragment_web, container, false);
         myWeb = vista.findViewById(R.id.webView);
-        myWeb.loadUrl("https://iesclaradelrey.es/portal/index.php/es/");
+        myWeb.loadUrl("https://iesclaradelrey.es/portal/index.php/es");
 
         return vista;
     }

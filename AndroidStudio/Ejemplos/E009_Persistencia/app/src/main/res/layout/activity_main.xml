@@ -53,7 +53,7 @@
         android:layout_width="fill_parent"
         android:layout_height="50dp"
         android:layout_marginTop="341dp"
-        android:onClick="abrir_activity2"
+        android:onClick="abrirActivity2"
         android:text="ver actividad"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

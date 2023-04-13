@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">MyMenuNavegacion</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="menu_home">Inicio</string>
+    <string name="menu_horario">Horario</string>
+    <string name="menu_calendario">Calendario</string>
+    <string name="menu_Add">Añadir Evento</string>
+    <string name="menu_salir">Salir</string>
+    <string name="mi_nombre">Alejandro Diez Redondo</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- arrays para los spinners -->
+    <string-array name="evento_tipo">
+        <item></item>
+        <item>Tareas</item>
+        <item>Exámenes</item>
+        <item>Proyectos</item>
+        <item>Apoyo</item>
+        <item>Otros</item>
+    </string-array>
+    
+    <string-array name="modulo_nombre">
+        <item></item>
+        <item>Programación de Servicios y Procesos</item>
+        <item>Móviles</item>
+        <item>Desarrollo de Interfaces</item>
+        <item>Diseño de Interfaces</item>
+        <item>Genérico</item>
+    </string-array>
+
+    <string-array name="vigencia">
+        <item></item>
+        <item>Vigente</item>
+        <item>Finalizado</item>
+    </string-array>
+
+</resources>

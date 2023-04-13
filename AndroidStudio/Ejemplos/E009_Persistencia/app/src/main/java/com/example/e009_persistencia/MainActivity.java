@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onRestoreInstanceState (@NonNull Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
         progresoTotal = savedInstanceState.getInt( "mi_progreso_total" );
-        myTextview.setText( progresoTotal .toString());
+        myTextview.setText(progresoTotal .toString());
     }
 
 
@@ -92,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     // (ver actividad onClick)
-    public void abrir_activity2(View Vista){
+    public void abrirActivity2(View v){
         Intent my_intent = new Intent(this, ActividadBBDD.class);
 
         startActivity(my_intent);
