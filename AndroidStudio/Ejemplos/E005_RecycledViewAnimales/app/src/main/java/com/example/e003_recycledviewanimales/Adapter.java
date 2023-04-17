@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
+// Ojo que tiene que extender
 public class Adapter extends RecyclerView.Adapter <Adapter.ViewHolder>{
 
     private int posicionSeleccionada = RecyclerView.NO_POSITION;
@@ -61,7 +62,7 @@ public class Adapter extends RecyclerView.Adapter <Adapter.ViewHolder>{
             @Override
             public void onClick(View view) {
                 notifyItemChanged(posicionSeleccionada);
-                posicionSeleccionada=position;
+                posicionSeleccionada = position;
                 notifyItemChanged(posicionSeleccionada);
 
                 // holder.myTextView.setBackgroundColor(Color.RED);

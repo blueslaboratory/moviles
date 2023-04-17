@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     Toolbar mytoolbar;
     DrawerLayout mydrawerLayout;
 
-     NavigationView navigationView;
+    NavigationView navigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
