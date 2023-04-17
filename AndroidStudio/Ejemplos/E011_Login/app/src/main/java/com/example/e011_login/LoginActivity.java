@@ -10,18 +10,32 @@ import android.widget.TextView;
 
 public class LoginActivity extends AppCompatActivity {
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_login);
+
+    }
+
+    /*
+    // 12/04/2023
+
     TextView tv2;
     EditText et2;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+
         tv2 = findViewById(R.id.textView);
         Bundle extras = getIntent().getExtras();
         String mensaje = extras.getString("extra_mensaje");
         tv2.setText(mensaje);
+
+
     }
 
 
@@ -39,7 +53,7 @@ public class LoginActivity extends AppCompatActivity {
     public void salir(View vista){
         this.finish();
     }
-    */
+
 
     @Override
     protected void onStop(){
@@ -47,4 +61,5 @@ public class LoginActivity extends AppCompatActivity {
         super.onStop();
         setResult(RESULT_CANCELED, null);
     }
+*/
 }

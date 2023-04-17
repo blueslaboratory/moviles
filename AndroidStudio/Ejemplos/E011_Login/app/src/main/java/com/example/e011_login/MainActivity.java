@@ -15,9 +15,29 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-// 12/04/2023
+
 
 public class MainActivity extends AppCompatActivity {
+
+    // 17/04/2023
+
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+
+
+    }
+
+    public void loginConEmail(View vista){
+
+    }
+
+
+
+    /*
+    // 12/04/2023
+
 
     EditText et1;
     String mensaje;
@@ -25,9 +45,11 @@ public class MainActivity extends AppCompatActivity {
     ActivityResultLauncher<Intent> myActivityResultLauncher;
 
     @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         myActivityResultLauncher = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
@@ -53,11 +75,13 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+
     }
 
     // Lanzar el mensaje desde el MainActivity a LoginActivity
     // Bundle: contenedor de parejas clave-valor
     // lo asignamos al boton
+
     public void lanzar_actividad(View vista){
         et1 = findViewById(R.id.editTextText);
         mensaje = et1.getText().toString();
@@ -73,6 +97,10 @@ public class MainActivity extends AppCompatActivity {
         - Si no esperas ningun resultado con startActivity te vale
          */
         // startActivity(my_intent);
+    /*
         myActivityResultLauncher.launch(my_intent);
     }
+
+    */
+
 }
