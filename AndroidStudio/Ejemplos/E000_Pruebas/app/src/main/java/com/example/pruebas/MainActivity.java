@@ -8,8 +8,11 @@ D:\AndroidStudioProjects\app\src\main\res\layout\activity_main.xml
 
 package com.example.pruebas;
 
+import androidx.activity.result.ActivityResultLauncher;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnLongClickListener;
@@ -23,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     EditText myedt1, myedt2;
     TextView mytv3;
     Button mybt1;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +52,9 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //sumarSinOnClick();
+
+
+
     }
 
     // En activity_main.xml meter la funcion sumar en el onClick
@@ -64,7 +71,6 @@ public class MainActivity extends AppCompatActivity {
         numero3 = numero1 + numero2;
         mytv3.setText(String.valueOf(numero3));
     }
-
 
 
     /*
