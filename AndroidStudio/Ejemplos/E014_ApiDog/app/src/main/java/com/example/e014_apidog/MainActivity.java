@@ -7,7 +7,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.gson.GsonBuilder;
 
@@ -20,7 +22,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class MainActivity extends AppCompatActivity {
 
     String raza;
-    // MiTareaAsincrona tarea1;
+    MiTareaAsincrona tarea1;
     LinearLayoutManager myLayout;
     RecyclerView myRecycler;
     MiAdaptador MyAdapter;
@@ -38,13 +40,21 @@ public class MainActivity extends AppCompatActivity {
         myRecycler.setLayoutManager(myLayout);
     }
 
+    //26/04/2023
+    public void cargar(View v){
+        raza = edt1.getText().toString();
+        tarea1 = new MiTareaAsincrona();
+        tarea1.execute();
+    }
+
 
     private class MiTareaAsincrona extends AsyncTask<Void, Void, DogRespuesta>{
         DogRespuesta dogRespuesta;
 
+        // 26/04/2023
         @Override
         protected DogRespuesta doInBackground(Void... params){
-            String cadena = "https://dog.ceo/api/bread/"+raza+"/";
+            String cadena = "https://dog.ceo/api/breed/"+raza+"/";
 
             Retrofit retrofit = new Retrofit.Builder()
                     .baseUrl(cadena)
@@ -58,11 +68,26 @@ public class MainActivity extends AppCompatActivity {
             try{
                 dogRespuesta = call.execute().body();
 
-                // ME QUEDO COPIANDO POR AQUI
-
-                //Log.d("Carga")
+                Log.d("Carga", "Cargado dogRespuesta");
             } catch (IOException e) {
-                e.printStackTrace();
+                Log.d("Error", "Error cargando dogRespuesta");
+            } catch (RuntimeException r){
+                Log.d("Error", "Error cargando dogRespuesta");
+            }
+
+            return dogRespuesta;
+        }
+
+
+        // 26/04/2023
+        @Override
+        protected void onPostExecute(DogRespuesta data){
+            if(data==null){
+                Toast.makeText(MainActivity.this, "No se han encontrado imágenes", Toast.LENGTH_SHORT).show();
+            }
+            else{
+                MyAdapter = new MiAdaptador(MainActivity.this, data);
+                myRecycler.setAdapter(MyAdapter);
             }
         }
     }
