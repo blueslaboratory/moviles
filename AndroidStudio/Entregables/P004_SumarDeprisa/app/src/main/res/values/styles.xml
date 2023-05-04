@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="MiBotonRojo" parent="@android:style/Widget.Button">
+        <item name="android:background">@color/red</item>
+    </style>
+</resources>
