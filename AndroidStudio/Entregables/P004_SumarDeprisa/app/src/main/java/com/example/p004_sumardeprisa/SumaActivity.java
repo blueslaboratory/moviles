@@ -45,10 +45,7 @@ public class SumaActivity extends AppCompatActivity {
         if(extras != null){
             segundos = extras.getInt("segundos");
         }
-        /*
-        Intent intent = getIntent();
-        segundos = intent.getIntExtra("segundos", 0);
-         */
+
 
         // Numeros aleatorios
         n1 = aleatorio();
@@ -68,7 +65,9 @@ public class SumaActivity extends AppCompatActivity {
         btnSalir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                volverMensajePrimaria("No era tan difícil, en primaria se aprende a sumar");
+                volverMensajePrimaria("Eres un paquete, vuelve a primaria\n\n" +
+                                      "El resultado es: " +(n1+n2) +"\n" +
+                                      "Tu respuesta ha sido: " +respuestaUsuario());
             }
         });
 
@@ -91,12 +90,18 @@ public class SumaActivity extends AppCompatActivity {
         String mensaje;
 
         if(respuestaUsuario == resultadoEsperado){
-            mensaje = "No era tan difícil, en primaria se aprende a sumar";
+            mensaje = //"comprobar()\n" +
+                      "No era tan difícil, en primaria se aprende a sumar\n\n" +
+                      "El resultado es: " +(n1+n2) +"\n" +
+                      "Tu respuesta ha sido: " +respuestaUsuario();
         } else{
-            mensaje = "Eres un paquete, vuelve a primaria";
+            mensaje = //"comprobar()\n" +
+                      "Eres un paquete, vuelve a primaria\n\n" +
+                      "El resultado es: " +(n1+n2) +"\n" +
+                      "Tu respuesta ha sido: " +respuestaUsuario();
         }
 
-        Toast.makeText(SumaActivity.this, mensaje, Toast.LENGTH_SHORT).show();
+        // Toast.makeText(SumaActivity.this, mensaje, Toast.LENGTH_SHORT).show();
 
         // Devolver el mensaje a la actividad anterior
         Intent intent = new Intent();
@@ -137,7 +142,7 @@ public class SumaActivity extends AppCompatActivity {
         Log.d("SumaActivity", "Mensaje enviado: " + mensaje);
 
         // Cerrar la actividad y volver a la anterior indicando fallo en la suma
-        setResult(RESULT_CANCELED, intent);
+        setResult(RESULT_OK, intent);
         finish();
     }
 
@@ -176,7 +181,6 @@ public class SumaActivity extends AppCompatActivity {
                 publishProgress(i);
 
                 if(isCancelled()){
-                    volverMensajePrimaria("No era tan difícil, en primaria se aprende a sumar");
                     break;
                 }
             }
@@ -204,14 +208,20 @@ public class SumaActivity extends AppCompatActivity {
         protected void onPostExecute(Boolean result){
             if(result){
                 Toast.makeText(SumaActivity.this, "Se acabo el tiempo", Toast.LENGTH_SHORT).show();
-                volverMensajePrimaria("No era tan difícil, en primaria se aprende a sumar");
+                volverMensajePrimaria(//"onPostExecute()\n" +
+                                      "Eres un paquete, vuelve a primaria\n\n" +
+                                      "El resultado es: " +(n1+n2) +"\n" +
+                                      "Tu respuesta ha sido: " +respuestaUsuario());
             }
         }
 
         @Override
         protected void onCancelled(){
             // Toast.makeText(SumaActivity.this, "Has desertado", Toast.LENGTH_SHORT).show();
-            volverMensajePrimaria("No era tan difícil, en primaria se aprende a sumar");
+            volverMensajePrimaria(//"onCancelled()\n" +
+                                  "Eres un paquete, vuelve a primaria\n\n" +
+                                  "El resultado es: " +(n1+n2) +"\n" +
+                                  "Tu respuesta ha sido: " +respuestaUsuario());
         }
 
     }

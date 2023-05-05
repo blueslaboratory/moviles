@@ -1,15 +1,14 @@
 package com.example.p004_sumardeprisa;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,17 +23,16 @@ public class MainActivity extends AppCompatActivity {
     EditText edtSegundos;
     TextView tvMensajeUsuario;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-         btnComenzar = findViewById(R.id.btnComenzar);
-         edtSegundos = findViewById(R.id.edtSegundos);
+        btnComenzar = findViewById(R.id.btnComenzar);
+        edtSegundos = findViewById(R.id.edtSegundos);
+        tvMensajeUsuario = findViewById(R.id.tvMensajeUsuario);
 
-
-         btnComenzar.setOnClickListener(new View.OnClickListener() {
+        btnComenzar.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View v) {
                  String strSegundos = edtSegundos.getText().toString();
@@ -65,9 +63,13 @@ public class MainActivity extends AppCompatActivity {
                              basically a passive data structure holding an abstract description of an action to
                              be performed.
                              */
+
                              Intent intent = new Intent(MainActivity.this, SumaActivity.class);
                              intent.putExtra("segundos", segundos);
-                             startActivity(intent);
+                             // hay que usar el deprecated, si usas startActivity a secas no consigo saber
+                             // cual es el metodo parejo, porque esta claro que no es onActivityResult()
+                             startActivityForResult(intent, 1);
+
                          }
 
                      // Valor no numerico
@@ -76,36 +78,26 @@ public class MainActivity extends AppCompatActivity {
                      }
                  }
 
-                 /*
-                 String mensaje;
-                 Bundle extras = getIntent().getExtras();
-
-                 if(extras != null){
-                     mensaje = extras.getString("mensaje");
-                     tvMensajeUsuario.setText(mensaje);
-                 }
-                  */
              }
 
-         });
+        });
 
     }
 
     // Recoger el mensaje que nos mandan de vuelta
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-
-        tvMensajeUsuario = findViewById(R.id.tvMensajeUsuario);
-
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if(resultCode == RESULT_CANCELED || resultCode == RESULT_OK){
+        if(requestCode == 1 && resultCode == RESULT_OK && data != null) {
             String mensaje = data.getStringExtra("mensaje");
             tvMensajeUsuario.setText(mensaje);
 
             // Agrega esta linea para comprobar si el mensaje esta llegando correctamente
             Log.d("MainActivity", "Mensaje recibido: " + mensaje);
         }
+
+        // tvMensajeUsuario.setText("Hola carabola");
 
     }
 
