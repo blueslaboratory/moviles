@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
         int permissionCheck = ContextCompat.checkSelfPermission(this, android.Manifest.permission.CAMERA);
 
         if(permissionCheck != PackageManager.PERMISSION_GRANTED){
-            Log.i("Mensaje", "No se tieen permiso para la camara!");
+            Log.i("Mensaje", "No se tiene permiso para la camara!");
             ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.CAMERA}, CODIGO_PERMISOS_CAMARA);
 
         }

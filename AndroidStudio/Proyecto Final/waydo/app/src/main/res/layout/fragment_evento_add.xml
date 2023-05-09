@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FragmentEventos">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/ivEventoAddBannerWaydo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="77dp"
+            android:src="@drawable/banner_waydo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:layout_width="338dp"
+            android:layout_height="181dp"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="364dp"
+            android:layout_marginEnd="36dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:id="@+id/tvEventoAddFecha"
+                    android:layout_width="167dp"
+                    android:layout_height="wrap_content"
+                    android:text="Fecha"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/edtEventoAddFecha"
+                    android:layout_width="167dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:clickable="true"
+
+                    android:ems="10"
+                    android:focusable="false"
+
+                    android:inputType="date" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_weight="0"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvEventoAddDistrito"
+                    android:layout_width="167dp"
+                    android:layout_height="wrap_content"
+                    android:text="Distrito"
+                    android:textSize="18sp" />
+
+                <Spinner
+                    android:id="@+id/spEventoAddDistrito"
+                    android:layout_width="167dp"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/evento_tipo" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvEventoAddBarrio"
+                    android:layout_width="167dp"
+                    android:layout_height="wrap_content"
+                    android:text="Barrio"
+                    android:textSize="18sp" />
+
+                <Spinner
+                    android:id="@+id/spEventoAddBarrio"
+                    android:layout_width="167dp"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/modulo_nombre" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvEventoAddVigencia"
+                    android:layout_width="167dp"
+                    android:layout_height="wrap_content"
+                    android:text="Vigencia"
+                    android:textSize="18sp" />
+
+                <Spinner
+                    android:id="@+id/spEventoAddVigencia"
+                    android:layout_width="167dp"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/vigencia" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnAddEvento"
+            android:layout_width="190dp"
+            android:layout_height="52dp"
+            android:layout_marginStart="110dp"
+            android:layout_marginTop="584dp"
+            android:layout_marginEnd="110dp"
+            android:text="Añadir Evento"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

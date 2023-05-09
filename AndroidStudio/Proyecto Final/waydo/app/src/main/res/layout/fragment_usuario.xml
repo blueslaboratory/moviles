@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="312dp"
+        android:layout_height="380dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="236dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="155dp"
+            android:layout_height="358dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvUsuarioNombre"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:gravity="start|center_vertical"
+                android:text="Nombre (opcional)" />
+
+            <TextView
+                android:id="@+id/tvUsuarioDistrito"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:gravity="start|center_vertical"
+                android:text="Distrito" />
+
+            <TextView
+                android:id="@+id/tvUsuarioBarrio"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:gravity="start|center_vertical"
+                android:text="Barrio (opcional)" />
+
+            <TextView
+                android:id="@+id/tvUsuarioNick"
+                android:layout_width="155dp"
+                android:layout_height="48dp"
+                android:gravity="start|center_vertical"
+                android:text="Nick" />
+
+            <TextView
+                android:id="@+id/tvUsuarioPassword"
+                android:layout_width="155dp"
+                android:layout_height="48dp"
+                android:gravity="start|center_vertical"
+                android:text="Password" />
+
+            <TextView
+                android:id="@+id/tvUsuarioEmail"
+                android:layout_width="155dp"
+                android:layout_height="48dp"
+                android:gravity="start|center_vertical"
+                android:text="Email" />
+
+            <TextView
+                android:id="@+id/tvUsuarioTelefono"
+                android:layout_width="155dp"
+                android:layout_height="48dp"
+                android:gravity="start|center_vertical"
+                android:text="Teléfono" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="155dp"
+            android:layout_height="358dp"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/edtUsuarioNombre"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:ems="10"
+                android:hint="tu nombre"
+                android:inputType="textPersonName"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/edtUsuarioDistrito"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:ems="10"
+                android:hint="tu distrito"
+                android:inputType="textPersonName"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/edtUsuarioBarrio"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:ems="10"
+                android:hint="tu barrio"
+                android:inputType="textPersonName"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/edtUsuarioNick"
+                android:layout_width="155dp"
+                android:layout_height="48dp"
+                android:ems="10"
+                android:hint="tu nick"
+                android:inputType="textPersonName"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/edtUsuarioPassword"
+                android:layout_width="155dp"
+                android:layout_height="48dp"
+                android:ems="10"
+                android:hint="tu password"
+                android:inputType="textPassword"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/edtUsuarioEmail"
+                android:layout_width="155dp"
+                android:layout_height="48dp"
+                android:ems="10"
+                android:hint="tu email"
+                android:inputType="textEmailAddress"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/edtUsuarioTelefono"
+                android:layout_width="155dp"
+                android:layout_height="48dp"
+                android:ems="10"
+                android:hint="tu teléfono"
+                android:inputType="phone"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/ivPfp"
+        android:layout_width="144dp"
+        android:layout_height="144dp"
+        android:layout_marginStart="132dp"
+        android:layout_marginTop="52dp"
+
+        android:background="@drawable/round_background"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        app:srcCompat="@drawable/pfp" />
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="640dp"
+        android:text="salvar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

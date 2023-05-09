@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/ivLoginBannerWaydo"
+        android:layout_width="369dp"
+        android:layout_height="88dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="58dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/banner_waydo" />
+
+    <ImageView
+        android:id="@+id/ivLoginBannerDistritos"
+        android:layout_width="278dp"
+        android:layout_height="300dp"
+        android:layout_marginStart="67dp"
+        android:layout_marginTop="190dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/banner_distritos_de_madrid" />
+
+    <TextView
+        android:id="@+id/tvLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="67dp"
+        android:layout_marginTop="529dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Iniciar sesión:"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/edtLoginNick"
+        android:layout_width="277dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="67dp"
+        android:layout_marginTop="565dp"
+        android:ems="10"
+        android:hint="usuario"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/edtLoginEmail"
+        android:layout_width="277dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="67dp"
+        android:layout_marginTop="598dp"
+        android:ems="10"
+        android:hint="contraseña"
+        android:inputType="textPassword"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnLoginRegistrarse"
+        android:layout_width="137dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="67dp"
+        android:layout_marginTop="640dp"
+        android:text="Registrarse"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnIniciar"
+        android:layout_width="137dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="207dp"
+        android:layout_marginTop="640dp"
+        android:text="iniciar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
