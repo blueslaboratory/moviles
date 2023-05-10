@@ -4,37 +4,46 @@
     tools:showIn="navegacion_view">
 
     <group android:checkableBehavior="single">
+
+        <!--
+        Item home a implementar en el futuro
         <item
-            android:id="@+id/id_inicio"
-            android:icon="@drawable/icon_home_48px"
+            android:id="@+id/id_home"
+            android:icon="@drawable/icon_home_32px"
             android:iconTint="@color/black"
             android:title="@string/menu_home" />
+        -->
         <item
-            android:id="@+id/id_horario"
-            android:icon="@drawable/icon_productivity_48px"
+            android:id="@+id/id_login"
+            android:icon="@drawable/icon_login_32px"
             android:iconTint="@color/black"
-            android:title="@string/menu_horario" />
-    </group>
-
-    <group android:checkableBehavior="single">
+            android:title="@string/menu_login" />
         <item
-            android:id="@+id/id_calendario"
-            android:icon="@drawable/icon_empty_dashboard_48px"
+            android:id="@+id/id_registro"
+            android:icon="@drawable/icon_register_32px"
             android:iconTint="@color/black"
-            android:title="@string/menu_calendario" />
+            android:title="@string/menu_registro" />
         <item
-            android:id="@+id/id_add"
-            android:icon="@drawable/icon_add_48px"
+            android:id="@+id/id_actividades"
+            android:icon="@drawable/icon_activities_32px"
             android:iconTint="@color/black"
-            android:title="@string/menu_Add" />
-    </group>
-
-    <group android:checkableBehavior="single">
+            android:title="@string/menu_actividades" />
+        <item
+            android:id="@+id/id_actividades_add"
+            android:icon="@drawable/icon_add_32px"
+            android:iconTint="@color/black"
+            android:title="@string/menu_actividades_add" />
+        <item
+            android:id="@+id/id_usuario"
+            android:icon="@drawable/icon_user_32px"
+            android:iconTint="@color/black"
+            android:title="@string/menu_usuario" />
         <item
             android:id="@+id/id_salir"
-            android:icon="@drawable/icon_logout_48px"
+            android:icon="@drawable/icon_exit_32px"
             android:iconTint="@color/black"
             android:title="@string/menu_salir" />
+
     </group>
 
 

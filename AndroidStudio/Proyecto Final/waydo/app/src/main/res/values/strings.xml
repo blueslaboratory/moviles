@@ -6,11 +6,14 @@
     <string name="user">Alejandro</string>
 
 
-    <string name="menu_home">Inicio</string>
-    <string name="menu_horario">Horario</string>
-    <string name="menu_calendario">Calendario</string>
-    <string name="menu_Add">Añadir Evento</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_login">Iniciar sesión</string>
+    <string name="menu_registro">Registro</string>
+    <string name="menu_actividades">Ver actividades</string>
+    <string name="menu_actividades_add">Añadir actividad</string>
+    <string name="menu_usuario">@string/user</string>
     <string name="menu_salir">Salir</string>
+
 
 
     <string name="navigation_drawer_open">Open navigation drawer</string>

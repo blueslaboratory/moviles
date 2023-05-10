@@ -24,7 +24,7 @@ public class FragmentWeb extends Fragment {
         WebView myWeb;
 
         // Inflate the layout for this fragment
-        vista = inflater.inflate(R.layout.fragment_web, container, false);
+        vista = inflater.inflate(R.layout.antiguo_fragment_web, container, false);
         myWeb = vista.findViewById(R.id.webView);
         myWeb.loadUrl("https://iesclaradelrey.es/portal/index.php/es");
 

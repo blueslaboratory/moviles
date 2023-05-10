@@ -147,7 +147,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         FragmentTransaction my_transaction = my_fragmentManager.beginTransaction();
         // Paso 3: Crear un nuevo fragmento y aniadirlo
         switch (menuItem.getItemId()){
-            case R.id.id_inicio:
+            // El home es a implementar en el futuro
+            /*
+            case R.id.id_home:
                 titulo = "Home";
                 FragmentWeb fragment1 = new FragmentWeb();
                 // reemplazar el LinearLayout con el fragmento
@@ -156,29 +158,49 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 my_transaction.commit();
                 setTitle(titulo);
                 return;
-            case R.id.id_horario:
-                titulo = "Horario";
-                FragmentHorario fragment2 = new FragmentHorario();
+            */
+
+            case R.id.id_login:
+                titulo = "Iniciar sesión";
+                FragmentLogin fragment2 = new FragmentLogin();
                 // reemplazar el LinearLayout con el fragmento
                 my_transaction.replace(R.id.linearLayout, fragment2);
                 // Paso 4: Confirmar el cambio
                 my_transaction.commit();
                 setTitle(titulo);
                 return;
-            case R.id.id_calendario:
-                titulo = "Calendario";
-                FragmentEventos fragment3 = new FragmentEventos();
+            case R.id.id_registro:
+                titulo = "Registro";
+                FragmentRegistro fragment3 = new FragmentRegistro();
                 // reemplazar el LinearLayout con el fragmento
                 my_transaction.replace(R.id.linearLayout, fragment3);
                 // Paso 4: Confirmar el cambio
                 my_transaction.commit();
                 setTitle(titulo);
                 return;
-            case R.id.id_add:
-                titulo = "Añadir Eventos";
-                FragmentAdd fragment4 = new FragmentAdd();
+            case R.id.id_actividades:
+                titulo = "Ver actividades";
+                FragmentActividades fragment4 = new FragmentActividades();
                 // reemplazar el LinearLayout con el fragmento
                 my_transaction.replace(R.id.linearLayout, fragment4);
+                // Paso 4: Confirmar el cambio
+                my_transaction.commit();
+                setTitle(titulo);
+                return;
+            case R.id.id_actividades_add:
+                titulo = "Añadir actividad";
+                FragmentActividadesAdd fragment5 = new FragmentActividadesAdd();
+                // reemplazar el LinearLayout con el fragmento
+                my_transaction.replace(R.id.linearLayout, fragment5);
+                // Paso 4: Confirmar el cambio
+                my_transaction.commit();
+                setTitle(titulo);
+                return;
+            case R.id.id_usuario:
+                titulo = "Mi usuario";
+                FragmentUsuario fragment6 = new FragmentUsuario();
+                // reemplazar el LinearLayout con el fragmento
+                my_transaction.replace(R.id.linearLayout, fragment6);
                 // Paso 4: Confirmar el cambio
                 my_transaction.commit();
                 setTitle(titulo);
@@ -196,6 +218,5 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         showFragment(item);
         return true;
     }
-
 
 }

@@ -19,16 +19,16 @@ import java.util.Calendar;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link FragmentAdd #newInstance} factory method to
+ * Use the {@link FragmentActividadesAdd #newInstance} factory method to
  * create an instance of this fragment.
  */
-public class FragmentAdd extends Fragment {
+public class FragmentActividadesAdd extends Fragment {
 
     AdministradorBBDD myAdminDDBB;
     SQLiteDatabase myDDBB;
 
 
-    public FragmentAdd() {
+    public FragmentActividadesAdd() {
         // Required empty public constructor
     }
 
@@ -44,7 +44,7 @@ public class FragmentAdd extends Fragment {
                              Bundle savedInstanceState) {
 
         // Inflate the layout for this fragment
-        View vista = inflater.inflate(R.layout.fragment_evento_add, container, false);
+        View vista = inflater.inflate(R.layout.fragment_actividades_add, container, false);
 
         EditText myEditTextDate = vista.findViewById(R.id.edtEventoAddFecha);
 

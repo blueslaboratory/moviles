@@ -16,12 +16,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 
-public class FragmentEventos extends Fragment {
+public class FragmentActividades extends Fragment {
 
     AdministradorBBDD myAdminBBDD;
     SQLiteDatabase myBBDD;
 
-    public FragmentEventos() {
+    public FragmentActividades() {
         // Required empty public constructor
     }
 
@@ -30,7 +30,7 @@ public class FragmentEventos extends Fragment {
                              Bundle savedInstanceState) {
 
         // Inflate the layout for this fragment
-        View vista = inflater.inflate(R.layout.fragment_eventos, container, false);
+        View vista = inflater.inflate(R.layout.fragment_actividades_recycler, container, false);
 
         ArrayList<Evento> eventos = new ArrayList<>();
         RecyclerView myRecyclerViewEventos = vista.findViewById(R.id.RecyclerViewEventos);
