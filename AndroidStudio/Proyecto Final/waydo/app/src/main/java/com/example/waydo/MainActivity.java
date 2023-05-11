@@ -24,6 +24,8 @@ import com.google.android.material.navigation.NavigationView;
 
 /*
 
+PROBLEMAS CON CONNECT TO FIREBAS: PROYECTO ABANDONADO
+
 08/03/2023
 En los temas hay un NoActionBar
 <style name="Theme.Waydo" parent="Theme.MaterialComponents.DayNight.NoActionBar">

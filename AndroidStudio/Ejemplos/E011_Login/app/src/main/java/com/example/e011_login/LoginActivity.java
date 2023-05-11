@@ -22,6 +22,9 @@ import com.google.firebase.auth.GoogleAuthProvider;
 public class LoginActivity extends AppCompatActivity {
 
     // UT6.1 Firebase 2º Parte
+    // URLS Firebase
+    // https://console.firebase.google.com/project/
+    // https://console.firebase.google.com/project/e011-login/overview
 
     String email, password;
     EditText edt_email, edt_password;
