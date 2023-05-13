@@ -3,28 +3,28 @@
     <item
         android:id="@+id/iInicio"
         android:title="Inicio"
-        android:icon=""
-        >
-    </item>
-
-    <item
-        android:id="@+id/iFavoritos"
-        android:title="Favoritos"
-        android:icon=""
+        android:icon="@drawable/icon_inicio_32px"
         >
     </item>
 
     <item
         android:id="@+id/iBuscarReceta"
         android:title="Buscar Receta"
-        android:icon=""
+        android:icon="@drawable/icon_buscar_receta_32px"
+        >
+    </item>
+
+    <item
+        android:id="@+id/iFavoritos"
+        android:title="Favoritos"
+        android:icon="@drawable/icon_favoritos_32px"
         >
     </item>
 
     <item
         android:id="@+id/iCrearReceta"
         android:title="Crear Receta"
-        android:icon=""
+        android:icon="@drawable/icon_crear_receta_32px"
         >
     </item>
 
@@ -34,28 +34,28 @@
     <item
         android:id="@+id/iMasApps"
         android:title="Más Apps"
-        android:icon=""
+        android:icon="@drawable/icon_mas_apps_32px"
         >
     </item>
 
     <item
         android:id="@+id/iCalificanos"
         android:title="Califícanos"
-        android:icon=""
+        android:icon="@drawable/icon_calificanos_32px"
         >
     </item>
 
     <item
         android:id="@+id/iPrivacidad"
         android:title="Privacidad"
-        android:icon=""
+        android:icon="@drawable/icon_privacidad_32px"
         >
     </item>
 
     <item
         android:id="@+id/iCompartir"
         android:title="Compartir"
-        android:icon=""
+        android:icon="@drawable/icon_compartir_32px"
         >
     </item>
     <!-- Bloque: Por defecto -->
@@ -65,14 +65,14 @@
     <item
         android:id="@+id/iContacto"
         android:title="Contacto"
-        android:icon=""
+        android:icon="@drawable/icon_contacto_32px"
         >
     </item>
 
     <item
         android:id="@+id/iSalir"
         android:title="Salir"
-        android:icon=""
+        android:icon="@drawable/icon_salir_32px"
         >
     </item>
 </menu>

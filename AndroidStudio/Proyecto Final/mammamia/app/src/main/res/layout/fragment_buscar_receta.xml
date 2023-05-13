@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context=".activities.Dashboard">
+
+    <TextView
+        android:id="@+id/tvFragmentBuscarReceta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="152dp"
+        android:text="Buscar Receta"
+        android:textColor="@color/yellow"
+        android:textSize="40sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/sp1FragmentBuscarReceta"
+        android:layout_width="242dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="126dp"
+        android:layout_marginTop="329dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv1FragmentBuscarReceta"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginStart="49dp"
+        android:layout_marginTop="329dp"
+        android:text="Plato"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv2FragmentBuscarReceta"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginStart="49dp"
+        android:layout_marginTop="276dp"
+        android:text="Tipo"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/sp2FragmentBuscarReceta"
+        android:layout_width="242dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="126dp"
+        android:layout_marginTop="276dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnMostrarPlato"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="152dp"
+        android:layout_marginTop="416dp"
+        android:text="mostrar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

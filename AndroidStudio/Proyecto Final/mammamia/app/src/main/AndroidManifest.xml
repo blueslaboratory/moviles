@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- Todos los permisos se ponen en el manifest: permiso para usar internet -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,6 +15,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Mammamia"
         tools:targetApi="31">
+        <activity
+            android:name=".activities.Privacidad"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
             android:name=".activities.FullView"
             android:exported="false">
@@ -32,8 +43,7 @@
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-        </activity>
-        <!-- Hacemos que el SplashScreen sea el Launcher principal -->
+        </activity> <!-- Hacemos que el SplashScreen sea el Launcher principal -->
         <activity
             android:name=".activities.SplashScreen"
             android:exported="true">
@@ -48,10 +58,5 @@
                 android:value="" />
         </activity>
     </application>
-
-
-    <!-- Todos los permisos se ponen en el manifest: permiso para usar internet -->
-    <uses-permission android:name="android.permission.INTERNET" />
-
 
 </manifest>
