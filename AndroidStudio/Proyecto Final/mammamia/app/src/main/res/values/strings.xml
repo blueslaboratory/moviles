@@ -1,3 +1,303 @@
 <resources>
-    <string name="app_name">mammamia</string>
+    <string name="app_name">Mamma Mia</string>
+
+    <!--
+        t: titulo
+        i: ingredientes
+        e: elaboracion
+    -->
+    <!-- Aperitivos -->
+    <string name="entrante_t001_yorkhuevohilado">Jamón York y Huevo</string>
+        <string name="entrante_i001_yorkhuevohilado">
+            100 g de jamón York\n
+            2 huevos
+        </string>
+        <string name="entrante_e001_yorkhuevohilado">
+            * Corta el jamón York en lonchas finas.\n
+            * Cocina los huevos al gusto (pueden ser cocidos, revueltos o en forma de tortilla).\n
+            * Sirve las lonchas de jamón York junto con los huevos.\n
+        </string>
+
+    <string name="entrante_t002_nachosguacamole">Nachos con Guacamole</string>
+        <string name="entrante_i002_nachosguacamole">
+            100 g de nachos\n
+            1 aguacate\n
+            1 limón\n
+            1/4 de cebolla\n
+            1 tomate pequeño\n
+            Un puñado de cilantro fresco\n
+            Sal al gusto
+        </string>
+        <string name="entrante_e002_nachosguacamole">
+            * Prepara el guacamole machacando el aguacate en un tazón.\n
+            * Exprime el jugo de limón sobre el aguacate para evitar que se oxide.\n
+            * Pica finamente la cebolla, el tomate y el cilantro, y añádelos al tazón.\n
+            * Mezcla todos los ingredientes hasta obtener una consistencia suave.\n
+            * Añade sal al gusto.\n
+            * Sirve los nachos junto con el guacamole.\n
+        </string>
+
+
+
+    <!-- Platos 1 -->
+    <string name="plato1_t001_ensalada">Ensalada con Pollo</string>
+        <string name="plato1_i001_ensalada">
+            200 g de lechuga\n
+            200 g de pollo cocido\n
+            1 tomate\n
+            1 pepino\n
+            1 zanahoria\n
+            Aceite de oliva\n
+            Vinagre\n
+            Sal al gusto
+        </string>
+        <string name="plato1_e001_ensalada">
+            * Lava y trocea la lechuga, el tomate, el pepino y la zanahoria.\n
+            * Desmenuza el pollo cocido.\n
+            * Mezcla todos los ingredientes en un bol.\n
+            * Aliña la ensalada con aceite de oliva, vinagre y sal al gusto.\n
+            * Mezcla bien todos los ingredientes para asegurar que estén bien aderezados.\n
+            * Sirve la ensalada en platos individuales.\n
+        </string>
+
+    <string name="plato1_t002_lentejas">Lentejas</string>
+        <string name="plato1_i002_lentejas">
+            200 g de lentejas\n
+            1 cebolla\n
+            1 zanahoria\n
+            1 tomate\n
+            1 pimiento\n
+            2 dientes de ajo\n
+            1 hoja de laurel\n
+            Aceite de oliva\n
+            Sal al gusto\n
+            1 cucharadita de pimentón dulce
+        </string>
+        <string name="plato1_e002_lentejas">
+            * Enjuaga las lentejas y déjalas en remojo durante al menos 1 hora.\n
+            * En una olla, sofríe la cebolla, zanahoria, tomate, pimiento y ajo picados en un poco de aceite de oliva.\n
+            * Añade las lentejas escurridas y cubre con agua.\n
+            * Agrega la hoja de laurel, sal al gusto y el pimentón dulce.\n
+            * Cocina a fuego medio durante aproximadamente 30-40 minutos o hasta que las lentejas estén tiernas.\n
+            * Remueve de vez en cuando y agrega más agua si es necesario.\n
+            * Una vez cocidas, retira la hoja de laurel y ajusta la sal si es necesario.\n
+            * Sirve las lentejas calientes en platos individuales.\n
+        </string>
+
+    <string name="plato1_t003_garbanzos">Garbanzos</string>
+        <string name="plato1_i003_garbanzos">
+            200 g de garbanzos cocidos\n
+            1 tomate\n
+            1 pepino\n
+            1/4 de cebolla\n
+            Un puñado de aceitunas\n
+            Aceite de oliva\n
+            Vinagre\n
+            Sal al gusto\n
+            Orégano al gusto
+        </string>
+        <string name="plato1_e003_garbanzos">
+            * Lava y trocea el tomate, el pepino, la cebolla y las aceitunas.\n
+            * En un bol, mezcla los garbanzos cocidos con los vegetales troceados.\n
+            * Aliña la ensalada con aceite de oliva, vinagre, sal y orégano al gusto.\n
+            * Mezcla bien todos los ingredientes para asegurar que estén bien aderezados.\n
+            * Sirve la ensalada de garbanzos en platos individuales.\n
+        </string>
+
+
+
+    <!-- Platos 2 -->
+    <string name="plato2_t001_pizza">Pizza Funghi</string>
+        <string name="plato2_i001_pizza">
+            Masa de pizza (puedes comprarla lista o prepararla en casa)\n
+            Salsa de tomate\n
+            Queso mozzarella rallado\n
+            Champiñones frescos\n
+            Orégano\n
+            Aceite de oliva\n
+            Sal al gusto
+        </string>
+        <string name="plato2_e001_pizza">
+            * Precalienta el horno a la temperatura recomendada para la masa de pizza.\n
+            * Estira la masa de pizza en una bandeja o piedra para pizza.\n
+            * Cubre la masa con una capa de salsa de tomate.\n
+            * Espolvorea generosamente el queso mozzarella rallado sobre la salsa de tomate.\n
+            * Lava y corta los champiñones en rodajas finas.\n
+            * Distribuye las rodajas de champiñones sobre la pizza.\n
+            * Rocía un poco de aceite de oliva sobre los champiñones.\n
+            * Espolvorea orégano y sal al gusto.\n
+            * Hornea la pizza según las instrucciones de la masa hasta que esté dorada y crujiente.\n
+            * Corta la pizza en porciones y sirve caliente.\n
+        </string>
+
+    <string name="plato2_t002_pasta">Pasta Carbonara</string>
+        <string name="plato2_i002_pasta">
+            200 g de pasta (spaghetti o fettuccine)\n
+            100 g de panceta o bacon\n
+            2 yemas de huevo\n
+            50 g de queso parmesano rallado\n
+            Sal al gusto\n
+            Pimienta negra molida al gusto
+        </string>
+        <string name="plato2_e002_pasta">
+            * Cocina la pasta en agua con sal según las instrucciones del paquete hasta que esté al dente.\n
+            * Mientras tanto, corta la panceta o bacon en trozos pequeños y fríelos en una sartén hasta que estén crujientes.\n
+            * En un tazón aparte, bate las yemas de huevo junto con el queso parmesano rallado.\n
+            * Cuando la pasta esté lista, escúrrela y reserva un poco de agua de cocción.\n
+            * Vierte la pasta caliente en la sartén con el bacon y mezcla bien.\n
+            * Retira la sartén del fuego y agrega la mezcla de yemas y queso.\n
+            * Remueve rápidamente para que la salsa se mezcle y se espese ligeramente.\n
+            * Añade un poco de agua de cocción reservada si es necesario para obtener una consistencia más cremosa.\n
+            * Salpimienta al gusto.\n
+            * Sirve la pasta carbonara caliente y espolvorea más queso parmesano por encima si deseas.\n
+        </string>
+
+    <string name="plato2_t003_lasagna">Lasagna</string>
+        <string name="plato2_i003_lasagna">
+            200 g de placas de lasaña\n
+            400 g de carne picada (mezcla de cerdo y ternera)\n
+            1 cebolla\n
+            2 dientes de ajo\n
+            400 g de tomate triturado\n
+            200 g de queso mozzarella rallado\n
+            50 g de queso parmesano rallado\n
+            Aceite de oliva\n
+            Sal\n
+            Pimienta\n
+            Albahaca (opcional)
+        </string>
+        <string name="plato2_e003_lasagna">
+            * Precalienta el horno a 180°C.\n
+            * En una sartén grande, calienta un poco de aceite de oliva y añade la cebolla picada y los ajos picados. Sofríe hasta que estén dorados.\n
+            * Agrega la carne picada y cocina hasta que esté bien dorada y cocida.\n
+            * Añade el tomate triturado, sal, pimienta y albahaca (si deseas). Cocina a fuego medio durante unos 15-20 minutos, removiendo de vez en cuando.\n
+            * En una olla aparte, cocina las placas de lasaña según las instrucciones del paquete.\n
+            * En una fuente apta para horno, coloca una capa de placas de lasaña, seguida de una capa de salsa de carne y una capa de queso mozzarella rallado. Repite este proceso hasta que hayas utilizado todos los ingredientes, terminando con una capa de queso mozzarella y queso parmesano rallado en la parte superior.\n
+            * Hornea en el horno precalentado durante aproximadamente 25-30 minutos, o hasta que la lasaña esté dorada y burbujeante.\n
+            * Retira del horno y deja reposar durante unos minutos antes de servir.\n
+        </string>
+
+    <string name="plato2_t004_marmitako">Marmitako</string>
+        <string name="plato2_i004_marmitako">
+            400 g de bonito fresco cortado en dados\n
+            2 patatas medianas\n
+            1 cebolla grande\n
+            2 pimientos verdes\n
+            2 dientes de ajo\n
+            2 tomates maduros\n
+            1 pimiento choricero (opcional)\n
+            500 ml de caldo de pescado\n
+            Aceite de oliva\n
+            Sal\n
+            Pimienta\n
+            Perejil picado (opcional)
+        </string>
+        <string name="plato2_e004_marmitako">
+            * En una olla grande, calienta un poco de aceite de oliva a fuego medio.\n
+            * Agrega la cebolla picada, los ajos picados y los pimientos verdes cortados en tiras. Sofríe hasta que estén tiernos.\n
+            * Añade los tomates pelados y picados, y el pimiento choricero previamente hidratado y desmenuzado (si lo utilizas). Cocina durante unos minutos hasta que los tomates se ablanden.\n
+            * Agrega las patatas peladas y cortadas en trozos grandes. Mezcla bien con el sofrito.\n
+            * Vierte el caldo de pescado en la olla y lleva a ebullición. Reduce el fuego y cocina a fuego lento hasta que las patatas estén tiernas, aproximadamente 20-25 minutos.\n
+            * Añade los dados de bonito y cocina durante unos 5-7 minutos, hasta que el bonito esté cocido pero jugoso en el centro. Evita sobre cocinarlo para que no se seque.\n
+            * Rectifica la sazón con sal y pimienta al gusto.\n
+            * Sirve el Marmitako caliente, espolvoreado con perejil picado fresco si lo deseas.\n
+        </string>
+
+    <string name="plato2_t005_solomillo">Solomillo</string>
+        <string name="plato2_i005_solomillo">
+            2 solomillos de ternera\n
+            Sal\n
+            Pimienta negra molida\n
+            Aceite de oliva\n
+            Mantequilla (opcional)\n
+            Ajo en polvo (opcional)\n
+            Perejil picado (opcional)
+        </string>
+        <string name="plato2_e005_solomillo">
+            * Salpimienta los solomillos de ternera por ambos lados.\n
+            * Calienta una sartén grande a fuego medio-alto y agrega un poco de aceite de oliva.\n
+            * Coloca los solomillos en la sartén caliente y cocina durante aproximadamente 3-4 minutos por cada lado para obtener un punto de cocción medio. Si prefieres la carne más o menos hecha, ajusta el tiempo de cocción según tu preferencia.\n
+            * Si deseas agregar un toque adicional de sabor, puedes agregar una pequeña porción de mantequilla a la sartén durante los últimos minutos de cocción.\n
+            * Retira los solomillos de la sartén y déjalos reposar durante unos minutos antes de cortarlos.\n
+            * Corta los solomillos en rodajas gruesas y sírvelos con los jugos de cocción.\n
+            * Opcionalmente, puedes espolvorear ajo en polvo y perejil picado sobre los solomillos antes de servir para darles más sabor.\n
+        </string>
+
+    <string name="plato2_t006_tortillapatatas">Tortilla de Patatas</string>
+        <string name="plato2_i006_tortillapatatas">
+            4 huevos\n
+            2 patatas medianas\n
+            1/2 cebolla\n
+            Sal\n
+            Aceite de oliva
+        </string>
+        <string name="plato2_e006_tortillapatatas">
+            * Pela y corta las patatas en rodajas finas y la cebolla en trozos pequeños.\n
+            * Calienta una sartén mediana a fuego medio-alto con un buen chorro de aceite de oliva.\n
+            * Agrega las patatas y la cebolla a la sartén, sazona con sal y cocina hasta que las patatas estén tiernas y la cebolla transparente, removiendo de vez en cuando.\n
+            * Bate los huevos en un bol y agrega las patatas y la cebolla, mezclando bien.\n
+            * Limpia la sartén con papel de cocina y caliéntala a fuego medio con un poco de aceite de oliva.\n
+            * Agrega la mezcla de huevo a la sartén y cocina a fuego medio-bajo hasta que la parte inferior esté dorada.\n
+            * Da la vuelta a la tortilla con ayuda de un plato y cocínala por el otro lado hasta que esté dorada también.\n
+            * Sirve caliente o fría, como prefieras.\n
+        </string>
+
+    <string name="plato2_t007_salmonvapor">Salmon al Vapor</string>
+        <string name="plato2_i007_salmonvapor">
+            2 filetes de salmón\n
+            Sal\n
+            Pimienta negra molida\n
+            Aceite de oliva\n
+            Rodajas de limón (opcional)\n
+            Hierbas frescas (opcional)
+        </string>
+        <string name="plato2_e007_salmonvapor">
+            * Calienta una vaporera al vapor.\n
+            * Salpimienta los filetes de salmón por ambos lados.\n
+            * Coloca los filetes en la vaporera caliente y cocina durante unos 6-8 minutos, dependiendo del grosor de los filetes y la potencia de la vaporera. Si lo deseas, agrega unas rodajas de limón y algunas hierbas frescas, como eneldo o tomillo, a la vaporera para darle más sabor al salmón.\n
+            * Retira los filetes de salmón de la vaporera y sírvelos inmediatamente con unas gotas de aceite de oliva por encima.\n
+        </string>
+
+
+
+
+    <!-- Postres -->
+    <string name="postre_t001_tartalimon">Tarta de Limón</string>
+        <string name="postre_i001_tartalimon">
+            200 g de galletas Digestive\n
+            100 g de mantequilla derretida\n
+            400 g de leche condensada\n
+            120 ml de zumo de limón\n
+            Ralladura de limón (opcional)\n
+            3 huevos\n
+            Azúcar glas (para decorar)
+        </string>
+        <string name="postre_e001_tartalimon">
+            * Tritura las galletas Digestive hasta obtener una textura fina. Puedes hacerlo utilizando una bolsa y un rodillo o un procesador de alimentos.\n
+            * En un bol, mezcla las galletas trituradas con la mantequilla derretida hasta obtener una masa homogénea.\n
+            * Presiona la masa de galleta en el fondo de un molde para tarta previamente engrasado, cubriendo toda la superficie.\n
+            * En otro bol, mezcla la leche condensada, el zumo de limón y la ralladura de limón (si lo deseas). Añade los huevos y mezcla bien hasta obtener una crema suave.\n
+            * Vierte la mezcla sobre la base de galleta en el molde.\n
+            * Hornea la tarta en el horno precalentado a 180°C durante aproximadamente 20-25 minutos, o hasta que esté firme en el centro.\n
+            * Retira del horno y deja enfriar completamente antes de desmoldar.\n
+            * Espolvorea azúcar glas por encima antes de servir.\n
+        </string>
+
+    <string name="postre_t002_arrozconleche">Arroz con Leche</string>
+        <string name="postre_i002_arrozconleche">
+            1/2 taza de arroz\n
+            2 tazas de leche\n
+            1/4 de taza de azúcar\n
+            1 rama de canela\n
+            Ralladura de limón\n
+            Canela en polvo (opcional)
+        </string>
+        <string name="postre_e002_arrozconleche">
+            * En una olla mediana, agrega el arroz, la leche, el azúcar, la rama de canela y la ralladura de limón.\n
+            * Lleva la mezcla a ebullición a fuego medio-alto, luego reduce el fuego a bajo y cocina a fuego lento durante unos 25-30 minutos, removiendo ocasionalmente para evitar que el arroz se pegue al fondo de la olla.\n
+            * Una vez que el arroz esté tierno y haya absorbido la mayor parte de la leche, retira la rama de canela y la ralladura de limón.\n
+            * Sirve el arroz con leche caliente o frío en recipientes individuales y espolvorea con canela en polvo por encima si lo deseas.\n
+        </string>
+
+
 </resources>

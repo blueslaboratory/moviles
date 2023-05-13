@@ -41,7 +41,7 @@ dependencies {
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'com.google.android.material:material:1.9.0'
 
-    // smarteist no va, casca la compilacion, utiliza mas adelante denzcoskun:
+    // smarteist no va, casca la compilacion, utiliza mas adelante denzcoskun en vez de esta:
     // https://github.com/smarteist/Android-Image-Slider
     // implementation 'com.github.smarteist:autoimageslider:1.4.0'
     // implementation 'com.github.smarteist:autoimageslider:1.3.9'

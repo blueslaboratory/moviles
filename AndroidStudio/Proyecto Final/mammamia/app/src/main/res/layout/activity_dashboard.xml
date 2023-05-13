@@ -101,12 +101,14 @@
 
                     <!-- el background color del button es un poco irrelevante porque prevalece el color del theme -->
                     <Button
-                        android:id="@+id/tvDashboardTotalButton_aperitivos"
+                        android:id="@+id/btnDashboardTotal_aperitivos"
                         android:layout_width="150dp"
                         android:layout_height="40dp"
                         android:layout_marginTop="22dp"
 
                         android:background="@drawable/view_all_button"
+
+                        android:onClick="ViewAll"
 
                         android:layout_gravity="center"
                         android:textSize="18sp"
@@ -200,12 +202,14 @@
 
                     <!-- el background color del button es un poco irrelevante porque prevalece el color del theme -->
                     <Button
-                        android:id="@+id/tvDashboardTotalButton_plato1"
+                        android:id="@+id/btnDashboardTotal_plato1"
                         android:layout_width="150dp"
                         android:layout_height="40dp"
                         android:layout_marginTop="22dp"
 
                         android:background="@drawable/view_all_button"
+
+                        android:onClick="ViewAll"
 
                         android:layout_gravity="center"
                         android:textSize="18sp"
@@ -300,12 +304,14 @@
 
                     <!-- el background color del button es un poco irrelevante porque prevalece el color del theme -->
                     <Button
-                        android:id="@+id/tvDashboardTotalButton_plato2"
+                        android:id="@+id/btnDashboardTotal_plato2"
                         android:layout_width="150dp"
                         android:layout_height="40dp"
                         android:layout_marginTop="22dp"
 
                         android:background="@drawable/view_all_button"
+
+                        android:onClick="ViewAll"
 
                         android:layout_gravity="center"
                         android:textSize="18sp"
@@ -400,12 +406,14 @@
 
                     <!-- el background color del button es un poco irrelevante porque prevalece el color del theme -->
                     <Button
-                        android:id="@+id/tvDashboardTotalButton_postres"
+                        android:id="@+id/btnDashboardTotal_postres"
                         android:layout_width="150dp"
                         android:layout_height="40dp"
                         android:layout_marginTop="22dp"
 
                         android:background="@drawable/view_all_button"
+
+                        android:onClick="ViewAll"
 
                         android:layout_gravity="center"
                         android:textSize="18sp"

@@ -1,4 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/iInicio"
+        android:title="Inicio"
+        android:icon=""
+        >
+    </item>
 
+    <item
+        android:id="@+id/iFavoritos"
+        android:title="Favoritos"
+        android:icon=""
+        >
+    </item>
+
+    <item
+        android:id="@+id/iBuscarReceta"
+        android:title="Buscar Receta"
+        android:icon=""
+        >
+    </item>
+
+    <item
+        android:id="@+id/iCrearReceta"
+        android:title="Crear Receta"
+        android:icon=""
+        >
+    </item>
+
+
+
+    <!-- Bloque: Por defecto -->
+    <item
+        android:id="@+id/iMasApps"
+        android:title="Más Apps"
+        android:icon=""
+        >
+    </item>
+
+    <item
+        android:id="@+id/iCalificanos"
+        android:title="Califícanos"
+        android:icon=""
+        >
+    </item>
+
+    <item
+        android:id="@+id/iPrivacidad"
+        android:title="Privacidad"
+        android:icon=""
+        >
+    </item>
+
+    <item
+        android:id="@+id/iCompartir"
+        android:title="Compartir"
+        android:icon=""
+        >
+    </item>
+    <!-- Bloque: Por defecto -->
+
+
+
+    <item
+        android:id="@+id/iContacto"
+        android:title="Contacto"
+        android:icon=""
+        >
+    </item>
+
+    <item
+        android:id="@+id/iSalir"
+        android:title="Salir"
+        android:icon=""
+        >
+    </item>
 </menu>
