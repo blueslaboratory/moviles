@@ -91,14 +91,15 @@ public class Dashboard extends AppCompatActivity {
                 // Paso 3: Crear un nuevo fragmento y aniadirlo
 
 
+                // estan en /res/menu/main_menu
                 switch (item.getItemId()){
+                    /*
                     case (R.id.iInicio):
-
                         break;
 
                     case (R.id.iBuscarReceta):
-                        // Por alguna razon, al meter fragments muere
-                        /*
+                        // Por alguna razon, al meter fragments se queda pillado en el fragmento y no puedo volver atras
+
                         titulo = "Buscar Receta";
                         FragmentBuscarReceta fragment0 = new FragmentBuscarReceta();
                         // reemplazar el drawerLayoutDashboard con el fragmento
@@ -106,7 +107,7 @@ public class Dashboard extends AppCompatActivity {
                         // Paso 4: Confirmar el cambio
                         my_transaction.commit();
                         setTitle(titulo);
-                        */
+
                         break;
 
 
@@ -115,6 +116,7 @@ public class Dashboard extends AppCompatActivity {
 
                     case (R.id.iCrearReceta):
                         break;
+                    */
 
                     case (R.id.iMasApps):
                         // https://stackoverflow.com/questions/11753000/how-to-open-the-google-play-store-directly-from-my-android-application
@@ -149,10 +151,14 @@ public class Dashboard extends AppCompatActivity {
                         startActivity(Intent.createChooser(shareIntent, "Share via"));
                         break;
 
+                    /*
                     case (R.id.iContacto):
                         break;
+                    */
 
                     case (R.id.iSalir):
+                        finishAffinity();
+                        finishAndRemoveTask();
                         System.exit(0);
                         break;
 
@@ -166,9 +172,6 @@ public class Dashboard extends AppCompatActivity {
                 return true;
             }
         });
-
-
-
 
 
 

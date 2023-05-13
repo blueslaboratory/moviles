@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
+<!--
     <item
         android:id="@+id/iInicio"
         android:title="Inicio"
@@ -27,7 +28,7 @@
         android:icon="@drawable/icon_crear_receta_32px"
         >
     </item>
-
+-->
 
 
     <!-- Bloque: Por defecto -->
@@ -61,14 +62,14 @@
     <!-- Bloque: Por defecto -->
 
 
-
+<!--
     <item
         android:id="@+id/iContacto"
         android:title="Contacto"
         android:icon="@drawable/icon_contacto_32px"
         >
     </item>
-
+-->
     <item
         android:id="@+id/iSalir"
         android:title="Salir"
