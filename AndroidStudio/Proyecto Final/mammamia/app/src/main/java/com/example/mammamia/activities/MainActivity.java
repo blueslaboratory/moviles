@@ -60,6 +60,10 @@ public class MainActivity extends AppCompatActivity {
                 getResources().getString(R.string.entrante_t001_yorkhuevohilado),
                 getResources().getString(R.string.entrante_i001_yorkhuevohilado),
                 getResources().getString(R.string.entrante_e001_yorkhuevohilado)));
+        constantList.add(new Constant(R.drawable.entrante_p002_nachosguacamole,
+                getResources().getString(R.string.entrante_t002_nachosguacamole),
+                getResources().getString(R.string.entrante_i002_nachosguacamole),
+                getResources().getString(R.string.entrante_e002_nachosguacamole)));
     }
 
     private void platos1() {

@@ -20,6 +20,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,6 +36,12 @@ public class Dashboard extends AppCompatActivity {
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     ActionBarDrawerToggle actionBarDrawerToggle;
+
+    // TextViews
+    TextView tvDashboardTotalNumberRecipesButton_aperitivos;
+    TextView tvDashboardTotalNumberRecipesButton_plato1;
+    TextView tvDashboardTotalNumberRecipesButton_plato2;
+    TextView tvDashboardTotalNumberRecipesButton_postres;
 
 
     // Cuando le doy al boton de retroceso del dispositivo
@@ -165,8 +172,6 @@ public class Dashboard extends AppCompatActivity {
                     default:
                         throw new IllegalArgumentException("menu option not implemented");
 
-
-
                 }
 
                 return true;
@@ -205,6 +210,12 @@ public class Dashboard extends AppCompatActivity {
 
         imageSliderAperitivos.setImageList(slideModelListAperitivos, ScaleTypes.FIT);
 
+        // TextView total de aperitivos
+        TextView tvDashboardTotalNumberRecipesButton_aperitivos = (TextView) findViewById(R.id.tvDashboardTotalNumberRecipesButton_aperitivos);;
+        tvDashboardTotalNumberRecipesButton_aperitivos.setText("Recetas totales: " +slideModelListAperitivos.size());
+
+
+
 
         // imageSliderPlato1
         slideModelListPlato1 = new ArrayList<>();
@@ -213,6 +224,12 @@ public class Dashboard extends AppCompatActivity {
         slideModelListPlato1.add(new SlideModel(R.drawable.plato1_p003_garbanzos, getResources().getString(R.string.plato1_t003_garbanzos), ScaleTypes.CENTER_CROP));
 
         imageSliderPlato1.setImageList(slideModelListPlato1, ScaleTypes.FIT);
+
+        // TextView total de plato1
+        TextView tvDashboardTotalNumberRecipesButton_plato1 = (TextView) findViewById(R.id.tvDashboardTotalNumberRecipesButton_plato1);;
+        tvDashboardTotalNumberRecipesButton_plato1.setText("Recetas totales: " +slideModelListPlato1.size());
+
+
 
 
         // imageSliderPlato2
@@ -227,6 +244,12 @@ public class Dashboard extends AppCompatActivity {
 
         imageSliderPlato2.setImageList(slideModelListPlato2, ScaleTypes.FIT);
 
+        // TextView total de plato2
+        TextView tvDashboardTotalNumberRecipesButton_plato2 = (TextView) findViewById(R.id.tvDashboardTotalNumberRecipesButton_plato2);
+        tvDashboardTotalNumberRecipesButton_plato2.setText("Recetas totales: " +slideModelListPlato2.size());
+
+
+
 
         // imageSliderPostres
         slideModelListPostres = new ArrayList<>();
@@ -234,6 +257,11 @@ public class Dashboard extends AppCompatActivity {
         slideModelListPostres.add(new SlideModel(R.drawable.postre_p002_arrozconleche, getResources().getString(R.string.postre_t002_arrozconleche), ScaleTypes.CENTER_CROP));
 
         imageSliderPostres.setImageList(slideModelListPostres, ScaleTypes.FIT);
+
+        // TextView total de postres
+        TextView tvDashboardTotalNumberRecipesButton_postres = (TextView) findViewById(R.id.tvDashboardTotalNumberRecipesButton_postres);
+        tvDashboardTotalNumberRecipesButton_postres.setText("Recetas totales: " +slideModelListPostres.size());
+
     }
 
 

@@ -17,28 +17,28 @@
         android:layout_height="wrap_content">
 
         <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-            <LinearLayout
-            android:id="@+id/activityDashboarLinearLayout"
-            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <LinearLayout
+                android:id="@+id/activityDashboarLinearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
 
                 <androidx.cardview.widget.CardView
-                    android:layout_margin="20dp"
-                    app:cardElevation="8dp"
-                    app:cardCornerRadius="12dp"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="8dp">
 
                     <LinearLayout
-                        android:orientation="vertical"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_marginBottom="30dp">
+                        android:layout_marginBottom="30dp"
+                        android:orientation="vertical">
 
                         <!--
                         Aqui iria el image slider pero no va, pondremos un ImageView si no funciona el 2º
@@ -52,10 +52,9 @@
                             android:layout_height="200dp"
                             android:layout_margin="20dp"
                             app:iss_auto_cycle="true"
-                            app:iss_period="2000"
                             app:iss_delay="2000"
-                            app:iss_text_align="CENTER">
-                        </com.denzcoskun.imageslider.ImageSlider>
+                            app:iss_period="2000"
+                            app:iss_text_align="CENTER"></com.denzcoskun.imageslider.ImageSlider>
 
                         <!--
                         <ImageView
@@ -73,55 +72,52 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="20dp"
                             android:gravity="left"
+                            android:text="Aperitivos"
                             android:textColor="@color/black"
-                            android:textStyle="bold"
                             android:textSize="16sp"
-                            android:text="Aperitivos">
-                        </TextView>
+                            android:textStyle="bold"></TextView>
 
 
                         <TextView
                             android:id="@+id/tvDashboardDescription_aperitivos"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
                             android:layout_marginLeft="20dp"
+                            android:layout_marginTop="10dp"
                             android:gravity="left"
+                            android:text="Los aperitivos son pequeñas porciones de comida o bocados que se sirven al principio de una comida para estimular el apetito. Suelen ser ligeros y sabrosos."
                             android:textColor="@color/black"
-                            android:textSize="14sp"
-                            android:text="Los aperitivos son pequeñas porciones de comida o bocados que se sirven al principio de una comida para estimular el apetito. Suelen ser ligeros y sabrosos.">
-                        </TextView>
+                            android:textSize="14sp"></TextView>
 
 
                         <TextView
                             android:id="@+id/tvDashboardTotalNumberRecipesButton_aperitivos"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
                             android:layout_marginLeft="20dp"
-                            android:padding="6dp"
+                            android:layout_marginTop="10dp"
                             android:background="@drawable/total_count_button"
                             android:gravity="left"
+                            android:padding="6dp"
+                            android:text="Recetas totales: 30"
                             android:textColor="@color/black"
-                            android:textSize="14sp"
-                            android:text="Recetas totales: 30">
-                        </TextView>
+                            android:textSize="14sp"></TextView>
 
                         <!-- el background color del button es un poco irrelevante porque prevalece el color del theme -->
                         <Button
                             android:id="@+id/btnDashboardTotal_aperitivos"
                             android:layout_width="150dp"
                             android:layout_height="40dp"
+                            android:layout_gravity="center"
+
                             android:layout_marginTop="22dp"
 
                             android:background="@drawable/view_all_button"
 
                             android:onClick="ViewAll"
-
-                            android:layout_gravity="center"
-                            android:textSize="18sp"
+                            android:text="Ver todas"
                             android:textColor="@color/black"
-                            android:text="Ver todas">
+                            android:textSize="18sp">
 
                         </Button>
 
@@ -130,17 +126,17 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
-                    android:layout_margin="20dp"
-                    app:cardElevation="8dp"
-                    app:cardCornerRadius="12dp"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="8dp">
 
                     <LinearLayout
-                        android:orientation="vertical"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_marginBottom="30dp">
+                        android:layout_marginBottom="30dp"
+                        android:orientation="vertical">
 
                         <!--
                         Aqui iria el image slider pero no va, pondremos un ImageView si no funciona el 2º
@@ -154,10 +150,9 @@
                             android:layout_height="200dp"
                             android:layout_margin="20dp"
                             app:iss_auto_cycle="true"
-                            app:iss_period="2000"
                             app:iss_delay="2000"
-                            app:iss_text_align="CENTER">
-                        </com.denzcoskun.imageslider.ImageSlider>
+                            app:iss_period="2000"
+                            app:iss_text_align="CENTER"></com.denzcoskun.imageslider.ImageSlider>
                         <!--
                         <ImageView
                             android:id="@+id/ivDashboardLogo_plato1"
@@ -174,55 +169,52 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="20dp"
                             android:gravity="left"
+                            android:text="Primeros Platos"
                             android:textColor="@color/black"
-                            android:textStyle="bold"
                             android:textSize="16sp"
-                            android:text="Primeros Platos">
-                        </TextView>
+                            android:textStyle="bold"></TextView>
 
 
                         <TextView
                             android:id="@+id/tvDashboardDescription_plato1"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
                             android:layout_marginLeft="20dp"
+                            android:layout_marginTop="10dp"
                             android:gravity="left"
+                            android:text="Los primeros platos, también conocidos como entrantes, son el primer plato principal en una comida. Por lo general, son platos más sustanciosos que los aperitivos y se sirven antes del plato principal."
                             android:textColor="@color/black"
-                            android:textSize="14sp"
-                            android:text="Los primeros platos, también conocidos como entrantes, son el primer plato principal en una comida. Por lo general, son platos más sustanciosos que los aperitivos y se sirven antes del plato principal.">
-                        </TextView>
+                            android:textSize="14sp"></TextView>
 
 
                         <TextView
                             android:id="@+id/tvDashboardTotalNumberRecipesButton_plato1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
                             android:layout_marginLeft="20dp"
-                            android:padding="6dp"
+                            android:layout_marginTop="10dp"
                             android:background="@drawable/total_count_button"
                             android:gravity="left"
+                            android:padding="6dp"
+                            android:text="Recetas totales: 30"
                             android:textColor="@color/black"
-                            android:textSize="14sp"
-                            android:text="Recetas totales: 30">
-                        </TextView>
+                            android:textSize="14sp"></TextView>
 
                         <!-- el background color del button es un poco irrelevante porque prevalece el color del theme -->
                         <Button
                             android:id="@+id/btnDashboardTotal_plato1"
                             android:layout_width="150dp"
                             android:layout_height="40dp"
+                            android:layout_gravity="center"
+
                             android:layout_marginTop="22dp"
 
                             android:background="@drawable/view_all_button"
 
                             android:onClick="ViewAll"
-
-                            android:layout_gravity="center"
-                            android:textSize="18sp"
+                            android:text="Ver todas"
                             android:textColor="@color/black"
-                            android:text="Ver todas">
+                            android:textSize="18sp">
 
                         </Button>
 
@@ -231,17 +223,17 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
-                    android:layout_margin="20dp"
-                    app:cardElevation="8dp"
-                    app:cardCornerRadius="12dp"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="8dp">
 
                     <LinearLayout
-                        android:orientation="vertical"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_marginBottom="30dp">
+                        android:layout_marginBottom="30dp"
+                        android:orientation="vertical">
 
                         <!--
                         Aqui iria el image slider pero no va, pondremos un ImageView si no funciona el 2º
@@ -255,10 +247,9 @@
                             android:layout_height="200dp"
                             android:layout_margin="20dp"
                             app:iss_auto_cycle="true"
-                            app:iss_period="2000"
                             app:iss_delay="2000"
-                            app:iss_text_align="CENTER">
-                        </com.denzcoskun.imageslider.ImageSlider>
+                            app:iss_period="2000"
+                            app:iss_text_align="CENTER"></com.denzcoskun.imageslider.ImageSlider>
                         <!--
 
                         <ImageView
@@ -276,55 +267,52 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="20dp"
                             android:gravity="left"
+                            android:text="Segundos Platos"
                             android:textColor="@color/black"
-                            android:textStyle="bold"
                             android:textSize="16sp"
-                            android:text="Segundos Platos">
-                        </TextView>
+                            android:textStyle="bold"></TextView>
 
 
                         <TextView
                             android:id="@+id/tvDashboardDescription_plato2"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
                             android:layout_marginLeft="20dp"
+                            android:layout_marginTop="10dp"
                             android:gravity="left"
+                            android:text="Los segundos platos son el plato principal en una comida y suelen consistir en una porción generosa de carne, pescado o vegetariano. Estos platos suelen ir acompañados de guarniciones y salsas."
                             android:textColor="@color/black"
-                            android:textSize="14sp"
-                            android:text="Los segundos platos son el plato principal en una comida y suelen consistir en una porción generosa de carne, pescado o vegetariano. Estos platos suelen ir acompañados de guarniciones y salsas.">
-                        </TextView>
+                            android:textSize="14sp"></TextView>
 
 
                         <TextView
                             android:id="@+id/tvDashboardTotalNumberRecipesButton_plato2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
                             android:layout_marginLeft="20dp"
-                            android:padding="6dp"
+                            android:layout_marginTop="10dp"
                             android:background="@drawable/total_count_button"
                             android:gravity="left"
+                            android:padding="6dp"
+                            android:text="Recetas totales: 30"
                             android:textColor="@color/black"
-                            android:textSize="14sp"
-                            android:text="Recetas totales: 30">
-                        </TextView>
+                            android:textSize="14sp"></TextView>
 
                         <!-- el background color del button es un poco irrelevante porque prevalece el color del theme -->
                         <Button
                             android:id="@+id/btnDashboardTotal_plato2"
                             android:layout_width="150dp"
                             android:layout_height="40dp"
+                            android:layout_gravity="center"
+
                             android:layout_marginTop="22dp"
 
                             android:background="@drawable/view_all_button"
 
                             android:onClick="ViewAll"
-
-                            android:layout_gravity="center"
-                            android:textSize="18sp"
+                            android:text="Ver todas"
                             android:textColor="@color/black"
-                            android:text="Ver todas">
+                            android:textSize="18sp">
 
                         </Button>
 
@@ -333,17 +321,17 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
-                    android:layout_margin="20dp"
-                    app:cardElevation="8dp"
-                    app:cardCornerRadius="12dp"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="8dp">
 
                     <LinearLayout
-                        android:orientation="vertical"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_marginBottom="30dp">
+                        android:layout_marginBottom="30dp"
+                        android:orientation="vertical">
 
                         <!--
                          Aqui iria el image slider pero no va, pondremos un ImageView si no funciona el 2º
@@ -357,10 +345,9 @@
                             android:layout_height="200dp"
                             android:layout_margin="20dp"
                             app:iss_auto_cycle="true"
-                            app:iss_period="2000"
                             app:iss_delay="2000"
-                            app:iss_text_align="CENTER">
-                        </com.denzcoskun.imageslider.ImageSlider>
+                            app:iss_period="2000"
+                            app:iss_text_align="CENTER"></com.denzcoskun.imageslider.ImageSlider>
                         <!--
 
                         <ImageView
@@ -378,62 +365,58 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="20dp"
                             android:gravity="left"
+                            android:text="Postres"
                             android:textColor="@color/black"
-                            android:textStyle="bold"
                             android:textSize="16sp"
-                            android:text="Postres">
-                        </TextView>
+                            android:textStyle="bold"></TextView>
 
 
                         <TextView
                             android:id="@+id/tvDashboardDescription_postres"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
                             android:layout_marginLeft="20dp"
+                            android:layout_marginTop="10dp"
                             android:gravity="left"
+                            android:text="Los postres son el broche final de una comida y son platos dulces que se sirven al final. Pueden ser opciones más ligeras como frutas frescas o yogur, o postres más elaborados."
                             android:textColor="@color/black"
-                            android:textSize="14sp"
-                            android:text="Los postres son el broche final de una comida y son platos dulces que se sirven al final. Pueden ser opciones más ligeras como frutas frescas o yogur, o postres más elaborados.">
-                        </TextView>
+                            android:textSize="14sp"></TextView>
 
 
                         <TextView
                             android:id="@+id/tvDashboardTotalNumberRecipesButton_postres"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
                             android:layout_marginLeft="20dp"
-                            android:padding="6dp"
+                            android:layout_marginTop="10dp"
                             android:background="@drawable/total_count_button"
                             android:gravity="left"
+                            android:padding="6dp"
+                            android:text="Recetas totales: 30"
                             android:textColor="@color/black"
-                            android:textSize="14sp"
-                            android:text="Recetas totales: 30">
-                        </TextView>
+                            android:textSize="14sp"></TextView>
 
                         <!-- el background color del button es un poco irrelevante porque prevalece el color del theme -->
                         <Button
                             android:id="@+id/btnDashboardTotal_postres"
                             android:layout_width="150dp"
                             android:layout_height="40dp"
+                            android:layout_gravity="center"
+
                             android:layout_marginTop="22dp"
 
                             android:background="@drawable/view_all_button"
 
                             android:onClick="ViewAll"
-
-                            android:layout_gravity="center"
-                            android:textSize="18sp"
+                            android:text="Ver todas"
                             android:textColor="@color/black"
-                            android:text="Ver todas">
+                            android:textSize="18sp">
 
                         </Button>
 
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
-
 
 
             </LinearLayout>
