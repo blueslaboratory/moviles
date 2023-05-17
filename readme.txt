@@ -42,3 +42,8 @@ Contenido local.properties:
 # For customization when using a Version Control System, please read the
 # header note.
 sdk.dir=/opt/android-studio-sdks
+
+
+_____________________________________________________
+Rutas de las apks:
+P00X_SumarDeprisa/app/build/outputs/apk/debug
